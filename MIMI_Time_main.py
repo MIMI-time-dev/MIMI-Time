@@ -134,6 +134,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 16px;
+    margin-bottom: 42px;
     flex-wrap: wrap;        /* スマホで潰れたら縦に落ちる */
 }
 
@@ -170,13 +171,33 @@ body.late .about-link a {
 .container {
     max-width: 560px;
     margin: 0 auto;
-    padding: 96px 16px 48px;
+
+    /* 上 / 左右 / 下（safe-area対応） */
+    padding: 96px 16px calc(96px + env(safe-area-inset-bottom));
+
     box-sizing: border-box;
+}
+
+.subtitle {
+    margin-top: 4px;      /* 「眠れない夜に」との間：ほんの少し */
+    margin-bottom: 12px;  /* 時間表示との間 */
+    font-size: 0.85em;
+    opacity: 0.65;
+    color: {{ text_faint }};
 }
 
 h1 {
     margin: 0 0 8px;
     color: {{ text_main }};
+}
+
+/* ← ここに追加 */
+.subtitle {
+    margin-top: 2px;        /* 「眠れない夜に」と少しだけ離す */
+    margin-bottom: 6px;     /* 時間表示とは詰め気味に */
+    font-size: 0.85em;
+    opacity: 0.65;
+    color: {{ text_faint }};
 }
 
 p {
@@ -200,12 +221,12 @@ p {
 }
 
 .footer-text {
-    margin-top: 24px;
+    margin-top: 12apx;
     color: {{ text_faint }};
 }
 
 .credit {
-    margin-top: 24px;
+    margin-top: 8px;
     font-size: 0.8em;
     opacity: 0.45;
 }
@@ -298,6 +319,9 @@ body.late .official-link a {
 
 <h1>{{ label }}</h1>
 
+<p class="subtitle">MIMIさんの曲に、ふと出会うための場所</p>
+
+
 <p>現在の時間帯：{{ zone }}</p>
 
 <p class="time">
@@ -321,6 +345,7 @@ body.late .official-link a {
 <div class="credit">
     <div class="credit-note">
         このサイトはMIMIさんの非公式ファンサイトです。<br>
+        (ご利用時の注意点は下部にあります)<br>
         動画は、YouTube公式の埋め込み機能を使用しています。
     </div>
 <div class="credit-links">
@@ -332,7 +357,7 @@ body.late .official-link a {
     
     <div class="about-link">
         <a href="/about">
-            サイトの利用上の注意
+            ご利用時の注意点
         </a>
     </div>
 </div>
@@ -358,7 +383,7 @@ ABOUT_HTML = """
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>サイトの利用上の注意</title>
+<title>ご利用時の注意点</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -394,11 +419,11 @@ a {
 
 <body>
 <div class="container">
-<h1>サイトの利用上の注意</h1>
+<h1>ご利用時の注意点</h1>
 
 <p>
 このサイトは、ボカロP「MIMI」さんの楽曲をきっかけに、  
-時間帯ごとにランダムで選曲される音楽と出会う体験を目的として制作した  
+時間帯ごとにランダムで選曲される音楽と出会う体験を目的として制作した、  
 <strong>非公式のファンサイト</strong>です。
 </p>
 
@@ -409,11 +434,11 @@ a {
 
 <p>
 本サイトは営利目的ではありません。  
-問題があった場合は、速やかに対応いたします。
+万が一問題等がございましたら、速やかに対応いたします。
 </p>
 
 <p>
-何かございましたらX(旧Twitter)のDMまでよろしくお願いいたします。
+何かございましたらX(旧Twitter)のDMまでご連絡ください。
 </p>
 
 <p>
