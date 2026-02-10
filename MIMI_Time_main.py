@@ -80,28 +80,28 @@ BG_COLOR = {
 
 # 動画ID------------------------------------------------------
 ALL_VIDEOS = {
-    "-2FCAZLhh-Y"
-    "ZQKAYcqIYzv"
-    "uoYegcqyfxE"
-    "8gcrKkXTx64"
-    "Wiz0Ap2ge5U"
-    "ZzBp3xUHvis"
-    "VPK-lxmGyDk"
-    "wW1UjAtAZ1A"
-    "tHo25oDiNNY"
-    "VS4yusNNKkQ"
-    "TC80uw4HgCw"
-    "Td9YlfLfXzM"
-    "ZQKAYcqIYzv"
-    "Mb_bFtcyg3E"
-    "HhEJsD-ZOJU"
-    "N5YD6SEVwKs"
-    "iiPet5Z6vmg"
-    "5ImdVATcfKs"
-    "LKyLOLosp54"
-    "ZQKAYcqIYzv"
-    "-yRWO4ODgQQ"
-    "ZQKAYcqIYzv"
+    "-2FCAZLhh-Y",
+    "ZQKAYcqIYzv",
+    "uoYegcqyfxE",
+    "8gcrKkXTx64",
+    "Wiz0Ap2ge5U",
+    "ZzBp3xUHvis",
+    "VPK-lxmGyDk",
+    "wW1UjAtAZ1A",
+    "tHo25oDiNNY",
+    "VS4yusNNKkQ",
+    "TC80uw4HgCw",
+    "Td9YlfLfXzM",
+    "ZQKAYcqIYzv",
+    "Mb_bFtcyg3E",
+    "HhEJsD-ZOJU",
+    "N5YD6SEVwKs",
+    "iiPet5Z6vmg",
+    "5ImdVATcfKs",
+    "LKyLOLosp54",
+    "ZQKAYcqIYzv",
+    "-yRWO4ODgQQ",
+    "ZQKAYcqIYzv",
     # 全曲リスト　次は天使の涙から
 
 
