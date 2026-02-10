@@ -3,10 +3,16 @@ import os, sys
 sys.path.append(os.path.dirname(__file__))
 
 from flask import Flask, render_template_string
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 import random
 
 app = Flask(__name__)
+
+# 日本時間を取得 ---------------------------------
+def get_current_hour():
+    JST = timezone(timedelta(hours=9))
+    now = datetime.now(JST)
+    return now.hour, now
 
 # 時間帯判定--------------------------------------------------
 def get_time_zone(hour):
@@ -404,10 +410,11 @@ a {
 </html>
 """
 
+
 @app.route("/")
 def index():
-    now = datetime.now()
-    zone = get_time_zone(now.hour)
+    hour, now = get_current_hour()
+    zone = get_time_zone(hour)
 
     return render_template_string(
         HTML,
@@ -416,10 +423,10 @@ def index():
         time=now.strftime("%H:%M"),
         bg=BG_COLOR[zone],
         footer=FOOTER_TEXT[zone],
-        video_id=random.choice(list(ALL_VIDEOS)),
+        video_id=random.choice(ALL_VIDEOS[zone]),
         text_main=TEXT_COLOR_MAIN[zone],
         text_sub=TEXT_COLOR_SUB[zone],
-        text_faint=TEXT_COLOR_FAINT[zone], 
+        text_faint=TEXT_COLOR_FAINT[zone],
     )
 # about接続用--------------------------------------------------
 @app.route("/about")
