@@ -346,6 +346,7 @@ body.late .official-link a {
     <div class="credit-note">
         このサイトはMIMIさんの非公式ファンサイトです。<br>
         (ご利用時の注意点は下部にあります)<br>
+        詳細情報は公式サイトをご確認ください。<br>
         動画は、YouTube公式の埋め込み機能を使用しています。
     </div>
 <div class="credit-links">
