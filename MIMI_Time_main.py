@@ -30,7 +30,7 @@ def get_time_zone(hour):
 
 # 表示テキスト------------------------------------------------
 TIME_LABEL = {
-    "morning": "いい日になるように",
+    "morning": "前向きな朝になるように",
     "day": "笑顔でいられるように",
     "evening": "夕暮れ、帰り道",
     "night": "夜の静けさ",
@@ -182,7 +182,7 @@ ALL_VIDEOS = {
     "lnfYoNLrMJE",
     "qivTJhNbqUc",
     "SBlkzGiM5uE",
-    # 全曲リスト　次は天使の涙から
+    # 全曲リスト
     
 
 }
