@@ -26,7 +26,7 @@ def get_time_zone(hour):
     elif 19 <= hour < 23:
         return "night"
     else:
-        return "late"
+        return "late night"
 
 # 表示テキスト------------------------------------------------
 TIME_LABEL = {
@@ -34,7 +34,7 @@ TIME_LABEL = {
     "day": "笑顔でいられるように",
     "evening": "夕暮れ、帰り道",
     "night": "夜の静けさ",
-    "late": "眠れない夜に",
+    "late night": "眠れない夜に",
 }
 
 FOOTER_TEXT = {
@@ -42,7 +42,7 @@ FOOTER_TEXT = {
     "day": "焦らず、自分が頑張れる範囲で",
     "evening": "今日の終わりに、少しだけ",
     "night": "静かな音が、そっと寄り添うように",
-    "late": "眠れない夜のために",
+    "late night": "眠れない夜のために",
 }
 
 # 色設定------------------------------------------------------
@@ -51,7 +51,7 @@ TEXT_COLOR_MAIN = {
     "day": "#2f2f2f",
     "evening": "#2b2b2b",
     "night": "#ffffff",
-    "late": "#ffffff"
+    "late night": "#ffffff"
 }
 
 TEXT_COLOR_SUB = {
@@ -59,7 +59,7 @@ TEXT_COLOR_SUB = {
     "day": "#555555",
     "evening": "#555555",
     "night": "#d0d3ff",
-    "late": "#c8ccff"
+    "late night": "#c8ccff"
 }
 
 TEXT_COLOR_FAINT = {
@@ -67,7 +67,7 @@ TEXT_COLOR_FAINT = {
     "day": "#777777",
     "evening": "#777777",
     "night": "#cfd3ff",   # ← 明度を上げる
-    "late": "#d6d9ff",
+    "late night": "#d6d9ff",
 }
 
 BG_COLOR = {
@@ -75,7 +75,7 @@ BG_COLOR = {
     "day": "#D6EEF9",
     "evening": "#FFD6C9",
     "night": "#1E1E3F",
-    "late": "#0B0B1A"
+    "late night": "#0B0B1A"
 }
 
 # 動画ID------------------------------------------------------
