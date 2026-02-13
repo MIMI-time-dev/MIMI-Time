@@ -390,9 +390,43 @@ body.late .official-link a {
     box-sizing: border-box;
 }
 
+/* ----------- 再リロード用 --------------------------------------------------- */
+.main-btn {
+    appearance: none;
+    -webkit-appearance: none;
+
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+
+    color: rgba(255,255,255,0.85);
+    padding: 5px 16px;     /* ← 少し小さく */
+    font-size: 13px;       /* ← 少し控えめ */
+
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    transition: all 0.3s ease;
+    
+    margin-top: 6px
+    margin-bottom: 4px
+}
+
+.main-btn:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+
+
 </style>
 </head>
 
+
+.main-btn:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+}
 <body class="{{ zone }}">
 
 <div class="container">
@@ -414,6 +448,11 @@ body.late .official-link a {
     <iframe src="https://www.youtube.com/embed/{{ video_id }}" allowfullscreen></iframe>
 </div>
 {% endif %}
+
+<button class="main-btn" onclick="location.reload()">
+    もう一曲と出会う
+</button>
+
 
 {% if footer %}
 <div class="footer-text">{{ footer }}</div>
