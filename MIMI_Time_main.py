@@ -71,7 +71,7 @@ TEXT_COLOR_FAINT = {
 }
 
 BG_COLOR = {
-    "morning": "#F2E6B8",
+    "morning": "#E3ECFF",
     "day": "#D6EEF9",
     "evening": "#FFD6C9",
     "night": "#1E1E3F",
@@ -332,6 +332,11 @@ body.evening .credit {
     color: #333333;          /* やさしい黒 */
 }
 
+/*------------------------------朝　全体文字色------------------------------------------*/
+body.morning {
+    color: #1F2538;
+}
+
 /* クレジット文字色：夜 */
 body.night .credit,
 body.late .credit {
@@ -477,7 +482,7 @@ body.late .official-link a {
     
     <div class="about-link">
         <a href="/about">
-            ご利用時の注意点
+            ご利用時の注意と説明
         </a>
     </div>
 </div>
@@ -503,7 +508,7 @@ ABOUT_HTML = """
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>ご利用時の注意点</title>
+<title>ご利用時の注意と説明</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -539,7 +544,7 @@ a {
 
 <body>
 <div class="container">
-<h1>ご利用時の注意点</h1>
+<h1>ご利用時の注意と説明</h1>
 
 <p>
 このサイトは、ボカロP「MIMI」(@mimi_3mi)さんの楽曲をきっかけに、  
@@ -548,7 +553,7 @@ a {
 </p>
 
 <p>
-本サイトは、MIMIさんの作品に影響を受けて制作したものです。
+本サイトは、MIMIさんの作品に影響を受けて制作しております。
 </p>
 
 <p>
@@ -562,7 +567,7 @@ a {
 </p>
 
 <p>
-何かございましたらX(旧Twitter)のDMまでご連絡ください。
+何かございましたら、X(旧Twitter)のDMまでご連絡ください。
 </p>
 
 <p>
