@@ -186,6 +186,35 @@ ALL_VIDEOS = {
     
 
 }
+
+#移動中表示（緩和）-------------------------------------------
+LOADING_HTML = """
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="2;url=/main">
+<title>MIMI Time</title>
+<style>
+body {
+    margin: 0;
+    background: #0B0B1A;
+    color: rgba(255,255,255,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    letter-spacing: 0.05em;
+}
+</style>
+</head>
+<body>
+MIMI Timeへ移動中…
+</body>
+</html>
+"""
+
 # HTML--------------------------------------------------------
 HTML = """
 <!DOCTYPE html>
@@ -603,7 +632,12 @@ a {
 
 
 @app.route("/")
+def loading():
+    return render_template_string(LOADING_HTML)
+
+@app.route("/main")
 def index():
+
     hour = get_current_hour()
     zone = get_time_zone(hour)
 
