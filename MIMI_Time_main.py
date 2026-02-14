@@ -5,7 +5,7 @@ from flask import Flask, render_template_string
 from datetime import datetime, timezone, timedelta
 import random
 
-JST = timezone(timedelta(hours=9))  # ← import の「後」
+JST = timezone(timedelta(hours=9))
 
 app = Flask(__name__)
 
@@ -66,7 +66,7 @@ TEXT_COLOR_FAINT = {
     "morning": "#777777",
     "day": "#777777",
     "evening": "#777777",
-    "night": "#cfd3ff",   # ← 明度を上げる
+    "night": "#cfd3ff",
     "late night": "#d6d9ff",
 }
 
@@ -82,7 +82,7 @@ BG_COLOR = {
 ALL_VIDEOS = {
     #最新曲---------------------------------------------------
     "-2FCAZLhh-Y",
-    "ZQKAYcqIYzv",
+    "ZQKAYcqIYzv",#重複
     "uoYegcqyfxE",
     "8gcrKkXTx64",
     "Wiz0Ap2ge5U",
@@ -93,7 +93,7 @@ ALL_VIDEOS = {
     "VS4yusNNKkQ",
     "TC80uw4HgCw",
     "Td9YlfLfXzM",
-    "ZQKAYcqIYzv",
+    "ZQKAYcqIYzv",#重複
     "Mb_bFtcyg3E",
     "HhEJsD-ZOJU",
     "N5YD6SEVwKs",
@@ -207,7 +207,7 @@ body {
     text-align: center;
 }
 
-/* 公式サイト + 利用上の注意 を横並びにする */
+/* 公式サイトと利用上の注意 を横並びにする */
 .credit-links {
     display: flex;
     gap: 10px;              /* ボタン同士の間隔 */
@@ -215,15 +215,15 @@ body {
     align-items: center;
     margin-top: 16px;
     margin-bottom: 42px;
-    flex-wrap: wrap;        /* スマホで潰れたら縦に落ちる */
+    flex-wrap: wrap;
 }
 
-/* ===== 利用上の注意リンク ================================- */
+/*-------------------- 利用上の注意リンク ---------------------------- */
 /* 利用上の注意（公式リンク横・同サイズ） */
 .about-link a {
     display: inline-block;
-    padding: 10px 18px;        /* ← 公式リンクと同じ */
-    font-size: 0.95em;         /* ← 公式リンクと同じ */
+    padding: 10px 18px;
+    font-size: 0.95em;
     font-weight: 500;
     border-radius: 999px;
 
@@ -246,7 +246,7 @@ body.late .about-link a {
     background: rgba(0, 0, 0, 0.12);
 }
 
-/* ===== ここまで ====================================================== */
+/*-------------------- ここまで ---------------------------- */
 
 .container {
     max-width: 560px;
@@ -259,7 +259,7 @@ body.late .about-link a {
 }
 
 .subtitle {
-    margin-top: 4px;      /* 「眠れない夜に」との間：ほんの少し */
+    margin-top: 4px;
     margin-bottom: 12px;  /* 時間表示との間 */
     font-size: 0.85em;
     opacity: 0.65;
@@ -271,10 +271,10 @@ h1 {
     color: {{ text_main }};
 }
 
-/* ← ここに追加 */
+/* 追加 */
 .subtitle {
-    margin-top: 2px;        /* 「眠れない夜に」と少しだけ離す */
-    margin-bottom: 6px;     /* 時間表示とは詰め気味に */
+    margin-top: 2px;
+    margin-bottom: 6px;
     font-size: 0.85em;
     opacity: 0.65;
     color: {{ text_faint }};
@@ -329,7 +329,7 @@ p {
 body.morning .credit,
 body.day .credit,
 body.evening .credit {
-    color: #333333;          /* やさしい黒 */
+    color: #333333;
 }
 
 /*------------------------------朝　全体文字色------------------------------------------*/
@@ -340,7 +340,7 @@ body.morning {
 /* クレジット文字色：夜 */
 body.night .credit,
 body.late .credit {
-    color: rgba(255, 255, 255, 0.75);  /* 薄い白 */
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .credit a {
@@ -349,15 +349,15 @@ body.late .credit {
 
 /* 公式サイト誘導リンク */
 .official-link {
-    margin-top: 18px;          /* ← 少し離す */
+    margin-top: 18px;
 }
 
 .official-link a {
     display: inline-block;
     padding: 10px 18px;
-    font-size: 0.95em;         /* 少し大きめ */
+    font-size: 0.95em;
     font-weight: 500;
-    border-radius: 999px;      /* やさしい丸 */
+    border-radius: 999px;
     text-decoration: none;
     transition: all 0.2s ease;
 }
@@ -383,7 +383,7 @@ body.late .official-link a {
     opacity: 0.9;
 }
 
-/* === 高さを完全に揃える上書き === */
+/* --------- 高さをそろえる ------- */
 .official-link a,
 .about-link a {
     display: inline-flex;
@@ -405,8 +405,8 @@ body.late .official-link a {
     background: rgba(255,255,255,0.05);
 
     color: rgba(255,255,255,0.85);
-    padding: 5px 16px;     /* ← 少し小さく */
-    font-size: 13px;       /* ← 少し控えめ */
+    padding: 5px 16px;
+    font-size: 13px;
 
     cursor: pointer;
     backdrop-filter: blur(4px);
@@ -607,7 +607,7 @@ def index():
     hour = get_current_hour()
     zone = get_time_zone(hour)
 
-    now = datetime.now(JST)  # ← ここで使える
+    now = datetime.now(JST)
 
     return render_template_string(
         HTML,
