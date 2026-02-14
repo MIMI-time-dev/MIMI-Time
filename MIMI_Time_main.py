@@ -422,16 +422,35 @@ body.late .official-link a {
     background: rgba(255,255,255,0.12);
 }
 
+.main-btn:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+}
+/*-----------------------リロード----------------------------------------------
 
+
+/*  朝・昼・夕 */
+body.morning .main-btn,
+body.day .main-btn,
+body.evening .main-btn {
+    background: rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: #2E2E3A;
+}
+
+/*  夜・深夜 */
+body.night .main-btn,
+body.late-night .main-btn {
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #ffffff;
+}
 
 </style>
 </head>
 
 
-.main-btn:hover {
-    background: rgba(255,255,255,0.25);
-    transform: translateY(-2px);
-}
+
 <body class="{{ zone }}">
 
 <div class="container">
