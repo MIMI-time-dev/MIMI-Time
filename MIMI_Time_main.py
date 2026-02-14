@@ -188,29 +188,61 @@ ALL_VIDEOS = {
 }
 
 #移動中表示（緩和）-------------------------------------------
+
 LOADING_HTML = """
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="2;url=/main">
+<meta http-equiv="refresh" content="1.2;url=/main">
 <title>MIMI Time</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500&display=swap" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
-    background: #0B0B1A;
-    color: rgba(255,255,255,0.8);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
+    background: radial-gradient(circle at center, #1a1a3a, #0B0B1A);
     font-family: 'Zen Maru Gothic', sans-serif;
-    letter-spacing: 0.05em;
+}
+
+.loading {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.dots {
+    display: inline-block;
+    animation: blink 1.2s infinite;
+}
+
+/* フェードイン */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* ・・・点滅 */
+@keyframes blink {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
 }
 </style>
 </head>
+
 <body>
-MIMI Timeへ移動中…
+<div class="loading">
+    MIMI Timeへ移動中<span class="dots">...</span>
+</div>
 </body>
 </html>
 """
