@@ -503,6 +503,21 @@ body.late-night .main-btn {
     color: #ffffff;
 }
 
+
+/* ----------------------------- ローディング重ね表示 ---------------------------------*/
+#loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, #1a1a3a, #0B0B1A);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: white;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
 </style>
 </head>
 
@@ -564,6 +579,12 @@ body.late-night .main-btn {
 </div>
 </div>
 
+</div>
+<!--ローディングオーバーレイ----------------------------------------------------------------------------------->
+<div id="loading-overlay">
+    MIMI Timeへ移動中...
+</div>
+
 <script>
 function updateClock() {
     const now = new Date();
@@ -573,6 +594,13 @@ function updateClock() {
 }
 updateClock();
 setInterval(updateClock, 60000);
+
+window.addEventListener("load", function() {
+    const overlay = document.getElementById("loading-overlay");
+    overlay.style.opacity = "0";
+    setTimeout(() => overlay.style.display = "none", 500);
+});
+
 </script>
 
 </body>
@@ -652,18 +680,19 @@ a {
 <div class="back">
     <a href="/">← トップページに戻る</a>
 </div>
-</div>
 </body>
 </html>
 """
 
 
 
-@app.route("/")
-def loading():
-    return render_template_string(LOADING_HTML)
+# @app.route("/")
+# def loading():
+#     return render_template_string(LOADING_HTML)
+# 
+# @app.route("/main")
 
-@app.route("/main")
+@app.route("/")
 def index():
 
     hour = get_current_hour()
