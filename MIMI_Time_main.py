@@ -1,7 +1,8 @@
 import os, sys
 sys.path.append(os.path.dirname(__file__))
 
-from flask import Flask, render_template_string
+from flask import Flask, render_template_string, session
+import secrets
 from datetime import datetime, timezone, timedelta
 import random
 
@@ -81,6 +82,7 @@ BG_COLOR = {
 # 動画ID------------------------------------------------------
 ALL_VIDEOS = {
     #最新曲---------------------------------------------------
+    "IxVFW1XIW7Q",
     "-2FCAZLhh-Y",
     "iUXrTnEeqRw",
     "uoYegcqyfxE",
@@ -276,7 +278,7 @@ body {
 }
 
 /*-------------------- 利用上の注意リンク ---------------------------- */
-/* 利用上の注意（公式リンク横・同サイズ） */
+/* 利用上の注意 */
 .about-link a {
     display: inline-block;
     padding: 10px 18px;
@@ -309,7 +311,7 @@ body.late .about-link a {
     max-width: 560px;
     margin: 0 auto;
 
-    /* 上 / 左右 / 下（safe-area対応） */
+    /* （safe-area対応） */
     padding: 96px 16px calc(96px + env(safe-area-inset-bottom));
 
     box-sizing: border-box;
@@ -674,7 +676,7 @@ def index():
     zone = get_time_zone(hour)
 
     now = datetime.now(JST)
-
+        
     return render_template_string(
         HTML,
         label=TIME_LABEL[zone],
