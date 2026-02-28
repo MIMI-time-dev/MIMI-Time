@@ -548,7 +548,7 @@ body.late-night .main-btn {
     color: #ffffff;
 }
 
-/* 背景を暗くする */
+/* 背景を暗く */
 #overlay {
     position: fixed;
     inset: 0;
@@ -571,6 +571,17 @@ body.late-night .main-btn {
     max-width: 80%;
 
     box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+
+.license-text a {
+  color: #e6c77a;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.license-text a:hover {
+  opacity: 0.8;
 }
 
 #settingsModal {
@@ -693,9 +704,15 @@ summary {
 
   <div class="license-text">
     © 2026 yu-sabu<br>
-    本プロジェクトのコードは個人・非商用利用のみ許可します。<br>
-    商用利用は禁止します。<br><br>
-    Music and artwork belong to their respective owners.
+    本サイトのコードは、個人利用および非商用利用に限り使用を許可します。<br>
+    商用利用は禁止します。<br>
+    記載している動画はYouTube公式の埋め込み機能を使用しています。<br>
+    各動画の著作権はそれぞれの権利者様に帰属します。<br><br>
+    Music and artwork belong to their respective owners.<br><br>
+    ソースコードはGitHubで公開しています。<br>
+    Source code is available on GitHub.<br>
+<a href="https://github.com/MIMI-time-dev/MIMI-Time" target="_blank">GitHubへ移動</a><br>
+
   </div>
   
 </details>
@@ -739,9 +756,8 @@ summary {
 <div class="credit">
     <div class="credit-note">
         このサイトはMIMIさんの非公式ファンサイトです。<br>
-        (ご利用時の注意点は下部にあります)<br>
-        詳細情報は公式サイトをご確認ください。<br>
-        動画は、YouTube公式の埋め込み機能を使用しています。
+        動画は、YouTube公式の埋め込み機能を使用しています。<br>
+        詳細は公式サイトをご確認ください。
     </div>
 <div class="credit-links">
     <div class="official-link">
@@ -882,21 +898,14 @@ body {
 </p>
 
 <p>
-本サイトは、MIMIさんの作品に影響を受けて制作しております。
-</p>
-
-<p>
 掲載している動画は、YouTube公式の埋め込み機能を利用しています。  
-動画の著作権は各権利者様に帰属します。
 </p>
 
-<p>
-本サイトは非営利目的で運営しています。  
-万が一問題等がございましたら、可能な限り対応いたします。
-</p>
+<p>本サイトは非営利目的で運営しています。</p>
+<p>万が一問題等がございましたら、可能な限り対応いたします。</p>
 
 <p>
-何かございましたら、X(旧Twitter)のDMからそっと教えていただけると嬉しいです。
+何かございましたら、X(旧Twitter)のDMから教えていただけると嬉しいです。
 </p>
 
 <p>
