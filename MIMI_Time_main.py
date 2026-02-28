@@ -1,7 +1,7 @@
 import os, sys
 sys.path.append(os.path.dirname(__file__))
 
-from flask import Flask, render_template_string, session
+from flask import Flask, render_template_string, request, session
 import secrets
 from datetime import datetime, timezone, timedelta
 import random
@@ -9,6 +9,7 @@ import random
 JST = timezone(timedelta(hours=9))
 
 app = Flask(__name__)
+app.secret_key = secrets.token_hex(16)
 
 # 日本時間を取得 ---------------------------------
 def get_current_hour():
@@ -80,7 +81,7 @@ BG_COLOR = {
 }
 
 # 動画ID------------------------------------------------------
-ALL_VIDEOS = {
+ALL_VIDEOS = [
     #最新曲---------------------------------------------------
     "IxVFW1XIW7Q",
     "-2FCAZLhh-Y",
@@ -183,9 +184,9 @@ ALL_VIDEOS = {
     # 全曲リスト
     
 
-}
+]
 
-#移動中表示（緩和）-------------------------------------------
+#移動中表示-------------------------------------------
 
 LOADING_HTML = """
 <!DOCTYPE html>
@@ -258,6 +259,48 @@ HTML = """
 
 
 <style>
+
+/* --------設定ボタン-------- */
+#settingsBtn {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+
+    padding: 5px 14px;
+    border-radius: 999px;
+
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.25);
+
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.2s ease;
+}
+
+#settingsBtn:hover {
+    background: rgba(0,0,0,0.5);
+}
+
+/* -------- 設定パネル------- */
+#settingsPanel {
+    position: fixed;
+    top: 22px;
+    right: 24px;
+    background: none;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    display: none;
+    width: 230px;
+    font-size: 14px;
+    z-index: 1000;
+}
+
 body {
     margin: 0;
     background-color: {{ bg }};
@@ -266,10 +309,10 @@ body {
     text-align: center;
 }
 
-/* 公式サイトと利用上の注意 を横並びにする */
+/* 公式サイトと利用系の位置*/
 .credit-links {
     display: flex;
-    gap: 10px;              /* ボタン同士の間隔 */
+    gap: 10px;
     justify-content: center;
     align-items: center;
     margin-top: 16px;
@@ -305,13 +348,13 @@ body.late .about-link a {
     background: rgba(0, 0, 0, 0.12);
 }
 
-/*-------------------- ここまで ---------------------------- */
+/*------------------------------------------------------- */
 
 .container {
     max-width: 560px;
     margin: 0 auto;
 
-    /* （safe-area対応） */
+    /* safe-area */
     padding: 96px 16px calc(96px + env(safe-area-inset-bottom));
 
     box-sizing: border-box;
@@ -319,7 +362,7 @@ body.late .about-link a {
 
 .subtitle {
     margin-top: 4px;
-    margin-bottom: 12px;  /* 時間表示との間 */
+    margin-bottom: 12px;
     font-size: 0.85em;
     opacity: 0.65;
     color: {{ text_faint }};
@@ -384,7 +427,7 @@ p {
     }
 }
 
-/* クレジット文字色：昼 */
+/* クレジット文字色・昼 */
 body.morning .credit,
 body.day .credit,
 body.evening .credit {
@@ -396,7 +439,7 @@ body.morning {
     color: #1F2538;
 }
 
-/* クレジット文字色：夜 */
+/* クレジット文字色・夜 */
 body.night .credit,
 body.late .credit {
     color: rgba(255, 255, 255, 0.75);
@@ -406,7 +449,7 @@ body.late .credit {
     color: inherit;
 }
 
-/* 公式サイト誘導リンク */
+/* 公式サイトリンク */
 .official-link {
     margin-top: 18px;
 }
@@ -421,7 +464,7 @@ body.late .credit {
     transition: all 0.2s ease;
 }
 
-/* 昼・夕 */
+/* 昼、夕 */
 body.morning .official-link a,
 body.day .official-link a,
 body.evening .official-link a {
@@ -429,14 +472,14 @@ body.evening .official-link a {
     background: rgba(0, 0, 0, 0.05);
 }
 
-/* 夜・深夜 */
+/* 夜、深夜 */
 body.night .official-link a,
 body.late .official-link a {
     color: rgba(255, 255, 255, 0.9);
     background: rgba(255, 255, 255, 0.08);
 }
 
-/* ホバー時（PC用） */
+/* PC用 */
 .official-link a:hover {
     transform: translateY(-1px);
     opacity: 0.9;
@@ -488,7 +531,7 @@ body.late .official-link a {
 /*-----------------------リロード----------------------------------------------
 
 
-/*  朝・昼・夕 */
+/*  朝、昼、夕 */
 body.morning .main-btn,
 body.day .main-btn,
 body.evening .main-btn {
@@ -497,12 +540,119 @@ body.evening .main-btn {
     color: #2E2E3A;
 }
 
-/*  夜・深夜 */
+/*  夜、深夜 */
 body.night .main-btn,
 body.late-night .main-btn {
     background: rgba(255,255,255,0.18);
     border: 1px solid rgba(255,255,255,0.4);
     color: #ffffff;
+}
+
+/* 背景を暗くする */
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+/* 設定 */
+#settingsModal {
+    text-aglign: left;
+    background: rgba(30, 30, 60, 0.85);
+    color: white;
+    padding: 24px 28px;
+    border-radius: 18px;
+    width: 260px;
+    max-width: 80%;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+#settingsModal {
+  text-align: left;
+}
+
+#settingsModal h2 {
+  text-align: center;
+}
+
+#settingsModal label {
+  display: block;
+  text-align: center;
+}
+
+#settingsModal details {
+  text-align: left;
+}
+
+#settingsModal summary {
+  text-align: left;
+}
+
+#closeSettings {
+  display: block;
+  margin: 20px auto 0;
+}
+
+/* ホバー */
+#settingsBtn:hover {
+    background: rgba(255,255,255,0.18);
+    border-color: white;
+}
+
+/* 押した時 */
+#settingsBtn:active {
+    transform: scale(0.95);
+}
+
+/* 閉じるボタン */
+#closeSettings {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+/*更新*/
+.update-list {
+  text-align: left;
+  }
+  
+/*ライセンス*/
+.license-section {
+  margin-top: 10px;
+}
+/*ライセンステキスト*/
+.license-text {
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+/*タブ揃え*/
+details {
+  margin: 0;
+  padding: 0;
+}
+
+summary::before {
+  content: "▶";
+}
+details[open] summary::before {
+  content: "▼";
+}
+
+
+summary {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
 }
 
 </style>
@@ -511,6 +661,48 @@ body.late-night .main-btn {
 
 
 <body class="{{ zone }}">
+
+<button id="settingsBtn">設定</button>
+
+<div id="overlay">
+    <div id="settingsModal">
+        <h2>設定</h2>
+
+        <label>
+            <input type="checkbox" id="noRepeatToggle">
+            さらにランダムにする
+        </label>
+
+<hr>
+
+<details class="update-section">
+  <summary> 更新履歴</summary>
+
+  <div class="update-item">
+
+    <div class="update-list">
+      26.3.1 ライセンス表記追加<br>
+      26.3.1 設定欄追加<br>
+      26.3.1 設定項目追加
+    </div>
+  </div>
+</details>
+
+<details class="license-section">
+  <summary>ライセンス</summary>
+
+  <div class="license-text">
+    © 2026 yu-sabu<br>
+    本プロジェクトのコードは個人・非商用利用のみ許可します。<br>
+    商用利用は禁止します。<br><br>
+    Music and artwork belong to their respective owners.
+  </div>
+  
+</details>
+        <br><br>
+        <button id="closeSettings">閉じる</button>
+    </div>
+</div>
 
 <div class="container">
 
@@ -564,6 +756,15 @@ body.late-night .main-btn {
         </a>
     </div>
 </div>
+
+<div class="footer-license">
+  © 2026 yu-sabu<br><br>
+  <span>  
+    For personal, non-commercial use only.
+    Music and artwork belong to their respective owners.
+   </span>
+  
+</div>
 </div>
 
 </div>
@@ -577,6 +778,36 @@ function updateClock() {
 }
 updateClock();
 setInterval(updateClock, 60000);
+
+const noRepeatToggle = document.getElementById("noRepeatToggle");
+
+// 保存されていた場合復元
+if (localStorage.getItem("noRepeat") === "true") {
+    noRepeatToggle.checked = true;
+}
+
+// チェック変更時保存
+noRepeatToggle.addEventListener("change", () => {
+    localStorage.setItem("noRepeat", noRepeatToggle.checked);
+});
+
+const settingsBtn = document.getElementById("settingsBtn");
+const overlay = document.getElementById("overlay");
+const closeSettings = document.getElementById("closeSettings");
+
+settingsBtn.addEventListener("click", () => {
+    overlay.style.display = "flex";
+});
+
+closeSettings.addEventListener("click", () => {
+    overlay.style.display = "none";
+});
+
+overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+        overlay.style.display = "none";
+    }
+});
 
 </script>
 
@@ -619,6 +850,23 @@ a {
 .back {
     text-align: center;
     margin-top: 32px;
+}
+
+.back {
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* ライセンス表記 */
+.footer-license {
+  padding-bottom: 30px;
+  font-size: 12px;
+  opacity: 0.6;
+  line-height: 1.6;
+}
+
+body {
+    padding-botom: 80px;
 }
 </style>
 </head>
