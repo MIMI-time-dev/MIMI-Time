@@ -692,6 +692,7 @@ summary {
   <div class="update-item">
 
     <div class="update-list">
+      26.3.1 外部リンクセキュリティ対策<br>
       26.3.1 ライセンス表記追加<br>
       26.3.1 設定欄追加<br>
       26.3.1 設定項目追加
@@ -711,7 +712,7 @@ summary {
     Music and artwork belong to their respective owners.<br><br>
     ソースコードはGitHubで公開しています。<br>
     Source code is available on GitHub.<br>
-<a href="https://github.com/MIMI-time-dev/MIMI-Time" target="_blank">GitHubへ移動</a><br>
+<a href="https://github.com/MIMI-time-dev/MIMI-Time" target="_blank" rel="noopener noreferrer">GitHubへ移動</a><br>
 
   </div>
   
