@@ -516,8 +516,8 @@ body.late .official-link a {
 
     transition: all 0.3s ease;
     
-    margin-top: 6px
-    margin-bottom: 4px
+    margin-top: 6px;
+    margin-bottom: 4px;
 }
 
 .main-btn:hover {
@@ -528,7 +528,7 @@ body.late .official-link a {
     background: rgba(255,255,255,0.25);
     transform: translateY(-2px);
 }
-/*-----------------------リロード----------------------------------------------
+/*-----------------------リロード----------------------------------------------*/
 
 
 /*  朝、昼、夕 */
@@ -694,7 +694,7 @@ summary {
 
   <!-- 直近の更新履歴 -->
   <div class="update-list">
-    26.3.1 文字色修正中です。しばらくお待ちください。<br>
+    26.3.1 文字色の修正<br>
     26.3.1 更新履歴タブの修正<br>
     26.3.1 （設定）直近ランダム修正<br>
   </div>
@@ -977,6 +977,9 @@ def index():
         bg=BG_COLOR[zone],
         footer=FOOTER_TEXT[zone],
         video_id=video_id,
+        text_main=TEXT_COLOR_MAIN[zone],
+        text_sub=TEXT_COLOR_SUB[zone],
+        text_faint=TEXT_COLOR_FAINT[zone],
     )
 
 def get_random_video(no_repeat=False):
