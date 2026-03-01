@@ -694,15 +694,16 @@ summary {
 
   <!-- 直近の更新履歴 -->
   <div class="update-list">
+    26.3.1 更新状況タブを追加<br>
     26.3.1 文字色の修正<br>
     26.3.1 更新履歴タブの修正<br>
-    26.3.1 （設定）直近ランダム修正<br>
   </div>
 
   <!-- 古い履歴 -->
   <details>
     <summary>過去の更新を見る</summary>
     <div class="update-list">
+      26.3.1 （設定）直近ランダム修正<br>
       26.3.1 外部リンクセキュリティ対策<br>
       26.3.1 ライセンス表記追加<br>
       26.3.1 設定欄追加<br>
@@ -710,6 +711,13 @@ summary {
     </div>
   </details>
 
+</details>
+
+<details class="status-section">
+  <summary>更新状況</summary>
+  <div class="update-list">
+    現時点での更新はありません<br>
+  </div>
 </details>
 
 <details class="license-section">
