@@ -29,7 +29,6 @@ def get_time_zone(hour):
         return "night"
     else:
         return "late night"
-
 # 表示テキスト------------------------------------------------
 TIME_LABEL = {
     "morning": "前向きな朝に",
@@ -669,6 +668,105 @@ summary {
   list-style: none;
 }
 
+
+.secret-modal {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+
+  z-index: 3000;
+}
+
+
+.secret-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: rgba(20,20,45,1);
+  padding: 24px;
+  border-radius: 16px;
+  color: rgba(255,255,255,0.92);
+  text-align: center;
+  width: 260px;
+
+  max-height: 80vh;
+}
+
+.secret-box p:first-child {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+.secret-hint {
+  font-size: 12px;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.secret-box button {
+    background: transparent;
+    color: #fff;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.4);
+    cursor: pointer;
+}
+
+.secret-box button:hover {
+    background: #e6e6e6;
+}
+
+
+
+/* Enterボタン右寄せ */
+.secret-box button:first-of-type {
+    margin-left: 6px;
+}
+
+/* 閉じるボタン下中央 */
+#passwordModal .secret-box button:last-of-type {
+    display: block;
+    margin: 16px auto 0 auto;
+}
+
+.secret-box input[type="password"] {
+    font-size: 16px;
+    width: 170px;
+    height: 32px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.secret-box .button-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+
+.secret-message {
+    font-size: 14px;
+    margin: 12px 0 20px 0;
+    color: rgba(255,255,255,0.88);  /* 0.82 → 0.88 */
+    line-height: 1.8;
+}
+
+
 </style>
 </head>
 
@@ -694,15 +792,17 @@ summary {
 
   <!-- 直近の更新履歴 -->
   <div class="update-list">
+    26.3.2 特定操作で表示されるページを追加<br>
+    26.3.2 各種動作の安定化<br>
     26.3.1 更新状況タブを追加<br>
-    26.3.1 文字色の修正<br>
-    26.3.1 更新履歴タブの修正<br>
   </div>
 
   <!-- 古い履歴 -->
   <details>
     <summary>過去の更新を見る</summary>
     <div class="update-list">
+      26.3.1 文字色の修正<br>
+      26.3.1 更新履歴タブの修正<br>
       26.3.1 （設定）直近ランダム修正<br>
       26.3.1 外部リンクセキュリティ対策<br>
       26.3.1 ライセンス表記追加<br>
@@ -716,7 +816,7 @@ summary {
 <details class="status-section">
   <summary>更新状況</summary>
   <div class="update-list">
-    現時点での更新はありません<br>
+    拡張ページの要素を検討中<br>
   </div>
 </details>
 
@@ -744,7 +844,7 @@ summary {
 
 <div class="container">
 
-<h1>{{ label }}</h1>
+<h1 id="mainTitle">{{ label }}</h1>
 
 <p class="subtitle">MIMIさんの曲に、ふと出会うための場所</p>
 
@@ -865,9 +965,123 @@ overlay.addEventListener("click", (e) => {
 });
 
 
+// パスワード表示
+
+let tapCount = 0;
+let tapTimer = null;
+
+document.getElementById("mainTitle").addEventListener("click", function() {
+
+    tapCount++;
+
+    if (tapCount >= 5) {
+        document.getElementById("passwordModal").style.display = "flex";
+        tapCount = 0;
+    }
+
+    clearTimeout(tapTimer);
+    tapTimer = setTimeout(() => {
+        tapCount = 0;
+    }, 2000);
+});
+
+
+// パスワード解除
+
+function unlockSecret() {
+    const input = document.getElementById("secretInput").value.trim().toLowerCase();
+
+    const validPasswords = [
+        "mimi",
+        "マシュマリー",
+        "ましゅまりー",
+        "mashumary",
+        "masyumary",
+        "ただ声一つ",
+        "ただこえひとつ",
+        "tadakoehitotu",
+        "ハナタバ",
+        "はなたば",
+        "hanataba",
+        "ラピスラズリ",
+        "らぴすらずり",
+        "rapisurazuri",
+        "よるつむぎ",
+        "yorutumugi"
+        
+    ];
+
+    if (validPasswords.includes(input)) {
+        document.getElementById("passwordModal").style.display = "none";
+        document.getElementById("secretModal").style.display = "flex";
+        document.body.style.overflow = "hidden";
+        document.getElementById("secretInput").value = "";
+    } else {
+        alert("パスワードが違うようです");
+    }
+}
+
+function closePassword() {
+    document.getElementById("passwordModal").style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+function goHome() {
+    document.getElementById("secretModal").style.display = "none";
+    document.body.style.overflow = "";
+}
+
+window.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("secretInput").addEventListener("keydown", function(e) {
+        if (e.key === "Enter") {
+            unlockSecret();
+        }
+    });
+});
+
+// リセット（隠しページ内）
+
+function resetSecret() {
+    document.getElementById("secretOption").checked = false;
+
+    document.getElementById("secretModal").style.display = "none";
+    document.getElementById("passwordModal").style.display = "flex";
+}
+
 
 </script>
 
+
+<!-- パスワード画面 -->
+<div id="passwordModal" class="secret-modal" style="display:none;">
+  <div class="secret-box">
+    <p>パスワードを入力してください</p>
+    <p class="secret-hint">ヒント：MIMIさんの代表曲は？</p>
+    <input type="password" id="secretInput">
+    <button onclick="unlockSecret()">Enter</button>
+    <button onclick="closePassword()">閉じる</button>
+    
+  </div>
+</div>
+
+<!-- 隠しページ -->
+<div id="secretModal" class="secret-modal" style="display:none;">
+  <div class="secret-box">
+    <p>この場所を見つけたあなたへ。</p>
+    <p class="secret-message">
+        ここは見つけたあなただけが変えられる場所です
+    </p>
+<label>
+    <input type="checkbox" id="secretOption">
+    未設定項目です
+</label>
+
+<div class="button-row">
+    <button onclick="resetSecret()">設定をリセット</button>
+    <button onclick="goHome()">ホームに戻る</button>
+</div>    
+
+</div>
 </body>
 </html>
 """
