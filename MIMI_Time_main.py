@@ -692,6 +692,7 @@ summary {
   <div class="update-item">
 
     <div class="update-list">
+      26.3.1 （設定）直近ランダム修正<br>
       26.3.1 外部リンクセキュリティ対策<br>
       26.3.1 ライセンス表記追加<br>
       26.3.1 設定欄追加<br>
@@ -742,7 +743,7 @@ summary {
 </div>
 {% endif %}
 
-<button class="main-btn" onclick="location.reload()">
+<button class="main-btn" onclick="reloadWithOption()">
     もう一曲と出会う
 </button>
 
@@ -796,6 +797,21 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 60000);
 
+function reloadWithOption() {
+    const checked = document.getElementById("noRepeatToggle").checked;
+
+    if (checked) {
+        window.location.href = "/main?no_repeat=true";
+    } else {
+        window.location.href = "/main";
+    }
+}
+
+// URLから復元
+if (window.location.search.includes("no_repeat=true")) {
+    document.getElementById("noRepeatToggle").checked = true;
+}
+
 const noRepeatToggle = document.getElementById("noRepeatToggle");
 
 // 保存されていた場合復元
@@ -825,6 +841,8 @@ overlay.addEventListener("click", (e) => {
         overlay.style.display = "none";
     }
 });
+
+
 
 </script>
 
@@ -932,9 +950,11 @@ def index():
 
     hour = get_current_hour()
     zone = get_time_zone(hour)
-
     now = datetime.now(JST)
-        
+
+    no_repeat = request.args.get("no_repeat") == "true"
+    video_id = get_random_video(no_repeat)
+
     return render_template_string(
         HTML,
         label=TIME_LABEL[zone],
@@ -942,11 +962,36 @@ def index():
         time=now.strftime("%H:%M"),
         bg=BG_COLOR[zone],
         footer=FOOTER_TEXT[zone],
-        video_id=random.choice(list(ALL_VIDEOS)),
-        text_main=TEXT_COLOR_MAIN[zone],
-        text_sub=TEXT_COLOR_SUB[zone],
-        text_faint=TEXT_COLOR_FAINT[zone],
+        video_id=video_id,
     )
+
+def get_random_video(no_repeat=False):
+
+    history = session.get("history", [])
+
+    if no_repeat:
+        # 直近5曲を除外
+        candidates = [v for v in ALL_VIDEOS if v not in history]
+
+        # すべて使うとリセット
+        if not candidates:
+            history = []
+            candidates = ALL_VIDEOS
+    else:
+        candidates = ALL_VIDEOS
+
+    selected = random.choice(candidates)
+
+    # 履歴に追加
+    history.append(selected)
+
+    # 直近5曲のみ保持
+    history = history[-5:]
+
+    session["history"] = history
+
+    return selected
+
 # about接続用--------------------------------------------------
 @app.route("/about")
 def about():
