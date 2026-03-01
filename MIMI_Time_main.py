@@ -569,7 +569,10 @@ body.late-night .main-btn {
     border-radius: 18px;
     width: 260px;
     max-width: 80%;
-
+    
+    max-height: 80vh;
+    overflow-y: auto;
+    
     box-shadow: 0 15px 40px rgba(0,0,0,0.25);
 }
 
@@ -687,18 +690,25 @@ summary {
 <hr>
 
 <details class="update-section">
-  <summary> 更新履歴</summary>
+  <summary>更新履歴</summary>
 
-  <div class="update-item">
+  <!-- 直近の更新履歴 -->
+  <div class="update-list">
+    26.3.1 更新履歴タブの修正<br>
+    26.3.1 （設定）直近ランダム修正<br>
+    26.3.1 外部リンクセキュリティ対策<br>
+  </div>
 
+  <!-- 古い履歴 -->
+  <details>
+    <summary>過去の更新を見る</summary>
     <div class="update-list">
-      26.3.1 （設定）直近ランダム修正<br>
-      26.3.1 外部リンクセキュリティ対策<br>
       26.3.1 ライセンス表記追加<br>
       26.3.1 設定欄追加<br>
-      26.3.1 設定項目追加
+      26.3.1 設定項目追加<br>
     </div>
-  </div>
+  </details>
+
 </details>
 
 <details class="license-section">
@@ -830,15 +840,18 @@ const closeSettings = document.getElementById("closeSettings");
 
 settingsBtn.addEventListener("click", () => {
     overlay.style.display = "flex";
+    document.body.style.overflow = "hidden";
 });
 
 closeSettings.addEventListener("click", () => {
     overlay.style.display = "none";
+    document.body.style.overflow = "";
 });
 
 overlay.addEventListener("click", (e) => {
     if (e.target === overlay) {
         overlay.style.display = "none";
+        document.body.style.overflow = "";
     }
 });
 
