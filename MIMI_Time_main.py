@@ -997,7 +997,13 @@ def get_random_video(no_repeat=False):
 def about():
     return render_template_string(ABOUT_HTML)
 
+@app.errorhandler(404)
+def not_found(e):
+    return "ページが見つかりません。", 404
 
+@app.errorhandler(500)
+def server_error(e):
+    return "サーバーでエラーが発生しました。", 500
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
