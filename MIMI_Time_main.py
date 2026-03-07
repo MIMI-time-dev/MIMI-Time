@@ -5,6 +5,7 @@ from flask import Flask, render_template_string, request, session
 import secrets
 from datetime import datetime, timezone, timedelta
 import random
+import requests
 
 JST = timezone(timedelta(hours=9))
 
@@ -767,6 +768,40 @@ summary {
 }
 
 
+.song-title{
+display:block;
+max-width:90%;
+margin:12px auto;
+font-size:16px;
+line-height:1.6;
+text-align:center;
+word-break:keep-all;
+overflow-wrap:break-word;
+
+opacity:0.85;
+color:rgba(255,255,255,0.88);
+text-decoration:none;
+}
+
+.song-title:hover{
+opacity:0.8;
+}
+
+.ext{
+margin-left:6px;
+font-size:0.8em;
+opacity:0.6;
+}
+
+.share-btn{
+display:block;
+margin-top:14px;
+font-size:14px;
+opacity:0.65;
+text-decoration:none;
+color:white;
+}
+
 </style>
 </head>
 
@@ -792,15 +827,17 @@ summary {
 
   <!-- 直近の更新履歴 -->
   <div class="update-list">
+    26.3.8 MIMI Time内の収録曲数の追加<br>
+    26.3.8 楽曲情報の追加<br>
     26.3.2 特定操作で表示されるページを追加<br>
-    26.3.2 各種動作の安定化<br>
-    26.3.1 更新状況タブを追加<br>
   </div>
 
   <!-- 古い履歴 -->
   <details>
     <summary>過去の更新を見る</summary>
     <div class="update-list">
+      26.3.2 各種動作の安定化<br>
+      26.3.1 更新状況タブを追加<br>
       26.3.1 文字色の修正<br>
       26.3.1 更新履歴タブの修正<br>
       26.3.1 （設定）直近ランダム修正<br>
@@ -862,14 +899,32 @@ summary {
 </div>
 {% endif %}
 
+<a class="song-title"
+href="https://www.youtube.com/watch?v={{ video_id }}"
+target="_blank"
+onclick="return confirmYouTube()">
+
+{{ title }}
+
+</a>
+
 <button class="main-btn" onclick="reloadWithOption()">
     もう一曲と出会う
 </button>
 
-
 {% if footer %}
 <div class="footer-text">{{ footer }}</div>
 {% endif %}
+
+<a class="share-btn"
+href="https://twitter.com/intent/tweet?text=今、この曲に出会いました。%0A%0A{{ title }}%0Ahttps://youtu.be/{{ video_id }}%0A%0AMIMI Time%0Ahttps://mimitimefan03.pythonanywhere.com%0A%0A%23MI民%E3%80%80%23MIMI_Time03"
+target="_blank">
+ ▶ この曲をXで共有する
+</a>
+
+<p style="opacity:0.55; font-size:13px; margin-top:10px;">
+現在 {{ song_count }} 曲収録されています
+</p>
 
 </div>
 
@@ -1190,7 +1245,8 @@ def index():
 
     no_repeat = request.args.get("no_repeat") == "true"
     video_id = get_random_video(no_repeat)
-
+    title = get_title(video_id)
+    
     return render_template_string(
         HTML,
         label=TIME_LABEL[zone],
@@ -1199,10 +1255,21 @@ def index():
         bg=BG_COLOR[zone],
         footer=FOOTER_TEXT[zone],
         video_id=video_id,
+        title=title,
         text_main=TEXT_COLOR_MAIN[zone],
         text_sub=TEXT_COLOR_SUB[zone],
         text_faint=TEXT_COLOR_FAINT[zone],
+        song_count=len(ALL_VIDEOS),
     )
+
+def get_title(video_id):
+    url = f"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={video_id}&format=json"
+    try:
+        r = requests.get(url)
+        data = r.json()
+        return data["title"]
+    except:
+        return ""
 
 def get_random_video(no_repeat=False):
 
