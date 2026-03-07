@@ -827,15 +827,16 @@ color:white;
 
   <!-- 直近の更新履歴 -->
   <div class="update-list">
+    26.3.8 Twitter(X)共有機能を追加<br>
     26.3.8 MIMI Time内の収録曲数の追加<br>
     26.3.8 楽曲情報の追加<br>
-    26.3.2 特定操作で表示されるページを追加<br>
   </div>
 
   <!-- 古い履歴 -->
   <details>
     <summary>過去の更新を見る</summary>
     <div class="update-list">
+      26.3.2 特定操作で表示されるページを追加<br>
       26.3.2 各種動作の安定化<br>
       26.3.1 更新状況タブを追加<br>
       26.3.1 文字色の修正<br>
@@ -853,7 +854,7 @@ color:white;
 <details class="status-section">
   <summary>更新状況</summary>
   <div class="update-list">
-    拡張ページの要素を検討中<br>
+    多言語対応のコードを作成中<br>
   </div>
 </details>
 
