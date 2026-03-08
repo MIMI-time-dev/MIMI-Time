@@ -866,7 +866,8 @@ color:rgba(255,255,255,0.75);
     本サイトのコードは、個人利用および非商用利用に限り使用を許可します。<br>
     商用利用は禁止します。<br>
     記載している動画はYouTube公式の埋め込み機能を使用しています。<br>
-    各動画の著作権はそれぞれの権利者様に帰属します。<br><br>
+    各動画の著作権はそれぞれの権利者様に帰属します。<br>
+    X（旧Twitter）はX Corp.の商標です。<br><br>
     Music and artwork belong to their respective owners.<br><br>
     ソースコードはGitHubで公開しています。<br>
     Source code is available on GitHub.<br>
