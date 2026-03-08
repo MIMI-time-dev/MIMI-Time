@@ -1266,7 +1266,8 @@ def index():
 def get_title(video_id):
     url = f"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={video_id}&format=json"
     try:
-        r = requests.get(url)
+        headers = {"User-Agent": "Mozilla/5.0"}
+        r = requests.get(url, headers=headers)
         data = r.json()
         return data["title"]
     except:
@@ -1288,6 +1289,7 @@ def get_random_video(no_repeat=False):
         candidates = ALL_VIDEOS
 
     selected = random.choice(candidates)
+    print("selected:", selected)
 
     # 履歴に追加
     history.append(selected)
