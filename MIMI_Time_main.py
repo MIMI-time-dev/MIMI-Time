@@ -779,7 +779,7 @@ word-break:keep-all;
 overflow-wrap:break-word;
 
 opacity:0.85;
-color:#333;
+color:rgba(255,255,255,0.75);
 text-decoration:none;
 }
 
@@ -799,7 +799,7 @@ margin-top:14px;
 font-size:14px;
 opacity:0.65;
 text-decoration:none;
-color:#444;
+color:rgba(255,255,255,0.75);
 }
 
 </style>
