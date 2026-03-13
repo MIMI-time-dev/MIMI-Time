@@ -777,9 +777,8 @@ line-height:1.6;
 text-align:center;
 word-break:keep-all;
 overflow-wrap:break-word;
-
 opacity:0.85;
-color:rgba(255,255,255,0.75);
+color:#c0c0c0;
 text-decoration:none;
 }
 
@@ -797,9 +796,10 @@ opacity:0.6;
 display:block;
 margin-top:14px;
 font-size:14px;
-opacity:0.65;
+opacity:1;
 text-decoration:none;
-color:rgba(255,255,255,0.75);
+color:#c0c0c0;
+font-weight:500;
 }
 
 </style>
