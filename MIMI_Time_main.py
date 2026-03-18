@@ -778,7 +778,7 @@ text-align:center;
 word-break:keep-all;
 overflow-wrap:break-word;
 opacity:0.85;
-color:#c0c0c0;
+color:#a9a9a9;
 text-decoration:none;
 }
 
@@ -798,7 +798,7 @@ margin-top:14px;
 font-size:14px;
 opacity:1;
 text-decoration:none;
-color:#c0c0c0;
+color:#808080;
 font-weight:500;
 }
 
