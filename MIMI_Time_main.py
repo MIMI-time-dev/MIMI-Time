@@ -82,6 +82,16 @@ BG_COLOR = {
 
 # 動画ID------------------------------------------------------
 ALL_VIDEOS = [
+    #1,アルバム収録曲
+    "spoQeZea7s8",
+    "56Na2tuPOXs",
+    "VRhZgfFOvZQ",
+    "w3S9o1kSpqE",
+    "5Zz_00sjwW0",
+    "VRhZgfFOvZQ",
+    "56Na2tuPOXs",
+    #2,アルバム収録曲（現時点での）
+    "RO6Z16icc8c",
     #最新曲---------------------------------------------------
     "IxVFW1XIW7Q",
     "-2FCAZLhh-Y",
@@ -185,6 +195,9 @@ ALL_VIDEOS = [
     
 
 ]
+
+for i in ALL_VIDEOS:
+    print(f"https://www.youtube.com/watch?v={ i }")
 
 #移動中表示-------------------------------------------
 
