@@ -840,6 +840,7 @@ font-weight:500;
 
   <!-- 直近の更新履歴 -->
   <div class="update-list">
+    26.3.25 楽曲追加<br>
     26.3.8 Twitter(X)共有機能を追加<br>
     26.3.8 MIMI Time内の収録曲数の追加<br>
     26.3.8 楽曲情報の追加<br>
