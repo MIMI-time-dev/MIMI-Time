@@ -952,16 +952,17 @@ font-weight:500;
 
   <!-- 直近の更新履歴 -->
   <div class="update-list">
+    26.4.5 重複IDの削除<br>
     26.3.25 楽曲追加<br>
     26.3.8 Twitter(X)共有機能を追加<br>
-    26.3.8 MIMI Time内の収録曲数の追加<br>
-    26.3.8 楽曲情報の追加<br>
   </div>
 
   <!-- 古い履歴 -->
   <details>
     <summary>過去の更新を見る</summary>
     <div class="update-list">
+      26.3.8 MIMI Time内の収録曲数の追加<br>
+      26.3.8 楽曲情報の追加<br>
       26.3.2 特定操作で表示されるページを追加<br>
       26.3.2 各種動作の安定化<br>
       26.3.1 更新状況タブを追加<br>
@@ -980,7 +981,8 @@ font-weight:500;
 <details class="status-section">
   <summary>更新状況</summary>
   <div class="update-list">
-    多言語対応のコードを作成中<br>
+    1,修正コードの作成<br>
+    2,曲名表示機能の作成<br>
   </div>
 </details>
 
