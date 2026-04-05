@@ -956,7 +956,7 @@ font-weight:500;
   color:#e6e8ff;
   border:none;
 ">
-  開発モード
+  開発者モード
 </button>
 </a>
 
