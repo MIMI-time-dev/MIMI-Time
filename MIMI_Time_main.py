@@ -311,6 +311,233 @@ ALL_VIDEOS = [
 #     # 全曲リスト
 #     ]
 
+# dev用ALL_VIDEOS------------------------------------------
+DEV_ALL_VIDEOS = [
+    #1,アルバム収録曲
+    "spoQeZea7s8",
+    "56Na2tuPOXs",
+    "VRhZgfFOvZQ",
+    "w3S9o1kSpqE",
+    "5Zz_00sjwW0",
+    #2,アルバム収録曲（現時点での）
+    "RO6Z16icc8c",
+    #最新曲---------------------------------------------------
+    "IxVFW1XIW7Q",
+    "-2FCAZLhh-Y",
+    "iUXrTnEeqRw",
+    "uoYegcqyfxE",
+    "8gcrKkXTx64",
+    "Wiz0Ap2ge5U",
+    "ZzBp3xUHvis",
+    "VPK-lxmGyDk",
+    "wW1UjAtAZ1A",
+#     "tHo25oDiNNY",
+#     "TC80uw4HgCw",
+#     "Td9YlfLfXzM",
+#     "5uHtY6DpRi4",
+#     "Mb_bFtcyg3E",
+#     "HhEJsD-ZOJU",
+#     "NNgCHHgJ2W8", #Session
+#     "N5YD6SEVwKs",
+#     "iiPet5Z6vmg",
+#     "5ImdVATcfKs",
+#     "LKyLOLosp54",
+#     "-yRWO4ODgQQ",
+#     "5hgSET4bpbk",
+#     "mCYjEWWsqZ8",
+#     "qDV_zAf9T6g",
+#     "m-bvW4pKT68",
+#     "sU9GBNnoEmA",
+#     "ConmlXSnM0E",
+#     "HkTihNKCWFA",
+#     "JE_GFOk90oU", #Session
+#     "dgkP8RQw-sQ",
+#     "7WXadfU7UOk",
+#     "9OiYX68L0BU",
+#     "Hvt59Q47M8k",
+#     "6f3GJ3uUc34",
+#     "qXvVt75kNmE",
+#     "bqyENYGSQzg",
+#     "q8Ap-1MUTew",
+#     "uUB2qgVBBjY",
+#     "ZiUwbmrMiAY",
+#     "p3Geomh2EuY",
+#     "lEoDjtCm488",
+#     "vAFoNaPZ5Pk",
+#     "rNZiCyCVIBQ",
+#     "xQYp4-Ett6A",
+#     "CHP7xCe8454",
+#     "Rpe5gphy3Dg",
+#     "tW6pTE_ENeo",
+#     "PAwZl3Up-hc",
+#     "FXNUn2KzcE8",
+#     "NihQBHOZLIw",
+#     "xgNeFTCzpgo",
+#     "YXCBQDK4DlE",
+#     "zQqIm-EVlkQ",
+#     "ArqagB9P1Qs",
+#     "SrdCXBZs4j8",
+#     "cGGlBYzZiJs",
+#     "ioW9iGDpQyw",
+#     "hupkoU8e1is",
+#     "f6TytcA47rI",
+#     "UZTcXWLf2Ek",
+#     "filTeBL7mA0",
+#     "o2CD3DjPHmU",
+#     "340OXvocRMM",
+#     "M50V-UBjqcI",
+#     "eurJC5ElRPE",
+#     "7xht3kQO_TM",
+#     "HyQK7IssB9M",
+#     "sVqtVjtRcN8",
+#     "_eBe5rD73Eg",
+#     "S2AhFrGXa8I",
+#     "vULemZ6DhM8",
+#     "1gSMjPLRJik",
+#     "XiKZE967BD4",
+#     "sFoWYa6QNKk",
+#     "yIo2ePCm4bY",
+#     "exo3XdtPrgs",
+#     "tI4nhL7qQdk",
+#     "vLigCJOcHOE",
+#     "PJrjwIlWVXA",
+#     "P_DgrvZmXM0",
+#     "06YWg6Y1kxo",
+#     "r5xaccIl1Ps",
+#     "Ou8sl4s3NJg",
+#     "Ziz_ckzVjyA",
+#     "Txh4DZmcbPk",
+#     "ZTFQs7MspEI",
+#     "UGzd2dnkhME",
+#     "89p7DWIqOu8",
+#     "pcRaY5kq4YY",
+#     "Q5XzviXSHQ4",
+#     "qtuX4cHk-vE",
+#     "rzamOqbbBfQ",
+#     "QJaY60vjSxw",
+#     "w4fxj1toPzc",
+#     "AfteRl4ePBc",
+#     "lnfYoNLrMJE",
+#     "qivTJhNbqUc",
+#     "SBlkzGiM5uE",
+    # 全曲リスト
+    
+
+]
+
+# dev用タイトル辞書------------------------------------------
+DEV_VIDEO_TITLES = {
+    #1,アルバム収録曲
+    "spoQeZea7s8":"淡さと微睡む",
+    "56Na2tuPOXs":"れじぇろ",
+    "VRhZgfFOvZQ":"アンダー",
+    "w3S9o1kSpqE":"水流音楽",
+    "5Zz_00sjwW0":"いいじゃない",
+    #2,アルバム収録曲（現時点での）
+    "RO6Z16icc8c":"大丈夫だよ。 (feat. 可不)",
+    #最新曲---------------------------------------------------
+    "IxVFW1XIW7Q":"『花びら哀歌』/ feat. 重音テトSV",
+    "-2FCAZLhh-Y":"『 柔く、ほどいて 』 / feat.初音ミク＆重音テトSV",
+    "iUXrTnEeqRw":"『それでも優しかった君へ』/ MIMI feat.沖石",
+    "uoYegcqyfxE":"『トリックハート』 / feat.重音テトSV",
+    "8gcrKkXTx64":"『声の欠片』/ MIMI feat. 月",
+    "Wiz0Ap2ge5U":"『星涙哀歌』/ MIMI feat. 初音ミク",
+    "ZzBp3xUHvis":"『凪と藍空』 / MIMI feat. マス",
+    "VPK-lxmGyDk":"『 愛されたいって願ってる 』/ MIMI feat. 可不",
+    "wW1UjAtAZ1A":"『痛いの痛いの飛んでいけっ』 / MIMI feat. saewool (Music Video)",
+     }
+#     "tHo25oDiNNY",
+#     "TC80uw4HgCw",
+#     "Td9YlfLfXzM",
+#     "5uHtY6DpRi4",
+#     "Mb_bFtcyg3E",
+#     "HhEJsD-ZOJU",
+#     "NNgCHHgJ2W8", #Session
+#     "N5YD6SEVwKs",
+#     "iiPet5Z6vmg",
+#     "5ImdVATcfKs",
+#     "LKyLOLosp54",
+#     "-yRWO4ODgQQ",
+#     "5hgSET4bpbk",
+#     "mCYjEWWsqZ8",
+#     "qDV_zAf9T6g",
+#     "m-bvW4pKT68",
+#     "sU9GBNnoEmA",
+#     "ConmlXSnM0E",
+#     "HkTihNKCWFA",
+#     "JE_GFOk90oU", #Session
+#     "dgkP8RQw-sQ",
+#     "7WXadfU7UOk",
+#     "9OiYX68L0BU",
+#     "Hvt59Q47M8k",
+#     "6f3GJ3uUc34",
+#     "qXvVt75kNmE",
+#     "bqyENYGSQzg",
+#     "q8Ap-1MUTew",
+#     "uUB2qgVBBjY",
+#     "ZiUwbmrMiAY",
+#     "p3Geomh2EuY",
+#     "lEoDjtCm488",
+#     "vAFoNaPZ5Pk",
+#     "rNZiCyCVIBQ",
+#     "xQYp4-Ett6A",
+#     "CHP7xCe8454",
+#     "Rpe5gphy3Dg",
+#     "tW6pTE_ENeo",
+#     "PAwZl3Up-hc",
+#     "FXNUn2KzcE8",
+#     "NihQBHOZLIw",
+#     "xgNeFTCzpgo",
+#     "YXCBQDK4DlE",
+#     "zQqIm-EVlkQ",
+#     "ArqagB9P1Qs",
+#     "SrdCXBZs4j8",
+#     "cGGlBYzZiJs",
+#     "ioW9iGDpQyw",
+#     "hupkoU8e1is",
+#     "f6TytcA47rI",
+#     "UZTcXWLf2Ek",
+#     "filTeBL7mA0",
+#     "o2CD3DjPHmU",
+#     "340OXvocRMM",
+#     "M50V-UBjqcI",
+#     "eurJC5ElRPE",
+#     "7xht3kQO_TM",
+#     "HyQK7IssB9M",
+#     "sVqtVjtRcN8",
+#     "_eBe5rD73Eg",
+#     "S2AhFrGXa8I",
+#     "vULemZ6DhM8",
+#     "1gSMjPLRJik",
+#     "XiKZE967BD4",
+#     "sFoWYa6QNKk",
+#     "yIo2ePCm4bY",
+#     "exo3XdtPrgs",
+#     "tI4nhL7qQdk",
+#     "vLigCJOcHOE",
+#     "PJrjwIlWVXA",
+#     "P_DgrvZmXM0",
+#     "06YWg6Y1kxo",
+#     "r5xaccIl1Ps",
+#     "Ou8sl4s3NJg",
+#     "Ziz_ckzVjyA",
+#     "Txh4DZmcbPk",
+#     "ZTFQs7MspEI",
+#     "UGzd2dnkhME",
+#     "89p7DWIqOu8",
+#     "pcRaY5kq4YY",
+#     "Q5XzviXSHQ4",
+#     "qtuX4cHk-vE",
+#     "rzamOqbbBfQ",
+#     "QJaY60vjSxw",
+#     "w4fxj1toPzc",
+#     "AfteRl4ePBc",
+#     "lnfYoNLrMJE",
+#     "qivTJhNbqUc",
+#     "SBlkzGiM5uE",
+#     # 全曲リスト
+#     }
+
 #移動中表示-------------------------------------------
 
 LOADING_HTML = """
@@ -947,7 +1174,6 @@ font-weight:500;
         
 <hr>
 
-<a href="/dev" style="color:#aaa; font-size:14px;">
 <button onclick="location.href='/dev'" style="
   margin-top:10px;
   padding:8px 12px;
@@ -955,10 +1181,10 @@ font-weight:500;
   background:#222;
   color:#e6e8ff;
   border:none;
+  cursor:pointer;
 ">
   開発者モード
 </button>
-</a>
 
 <hr>
 
@@ -1372,7 +1598,176 @@ body {
 </body>
 </html>
 """
+#開発モード------------------------------------------------------------------------------------------------------------------------
+DEV_HTML = """
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>[DEV] MIMI Time</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
+<style>
 
+
+
+body {
+    margin: 0;
+    background-color: {{ bg }};
+    font-family: 'Zen Maru Gothic', sans-serif;
+    transition: background-color 0.5s;
+    text-align: center;
+    color: {{ text_main }};
+}
+
+/* 開発バー（上部固定）*/
+#devBar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(20, 20, 20, 0.92);
+    color: #e6e8ff;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 9999;
+    font-size: 13px;
+    flex-wrap: wrap;
+    backdrop-filter: blur(6px);
+}
+
+#devBar a {
+    color: #aac0ff;
+    text-decoration: none;
+    padding: 4px 10px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+#devBar select {
+    background: #1e1e3f;
+    color: #e6e8ff;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 12px;
+}
+
+#devBar span {
+    opacity: 0.5;
+    font-size: 12px;
+}
+
+.container {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 110px 16px 96px;
+    box-sizing: border-box;
+}
+
+h1 { margin: 0 0 8px; color: {{ text_main }}; }
+p { margin: 6px 0; color: {{ text_sub }}; }
+.time { color: {{ text_faint }}; }
+
+.video-wrap { margin-top: 24px; }
+.video-wrap iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    border: none;
+}
+
+.song-title {
+    display: block;
+    max-width: 90%;
+    margin: 12px auto;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    color: #a9a9a9;
+    text-decoration: none;
+}
+
+/*再リロード*/
+
+.main-btn {
+    appearance: none;
+    -webkit-appearance: none;
+
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+
+    color: rgba(255,255,255,0.85);
+    padding: 5px 16px;
+    font-size: 13px;
+
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    transition: all 0.3s ease;
+    
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+
+.main-btn:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.main-btn:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+}
+
+.footer-text { margin-top: 12px; color: {{ text_faint }}; }
+</style>
+</head>
+
+<body class="{{ zone }}">
+
+<!-- 開発バー -->
+<div id="devBar">
+    <a href="/main">← メインに戻る</a>
+    <span>DEV MODE</span>
+    <label>時間帯：
+        <select onchange="location.href='/dev?zone='+this.value">
+            <option value="morning"   {% if zone=='morning'   %}selected{% endif %}>morning（朝）</option>
+            <option value="day"       {% if zone=='day'       %}selected{% endif %}>day（昼）</option>
+            <option value="evening"   {% if zone=='evening'   %}selected{% endif %}>evening（夕）</option>
+            <option value="night"     {% if zone=='night'     %}selected{% endif %}>night（夜）</option>
+            <option value="late night"{% if zone=='late night'%}selected{% endif %}>late night（深夜）</option>
+        </select>
+    </label>
+    <span>動画ID: {{ video_id }}</span>
+</div>
+
+<div class="container">
+    <h1>{{ label }}</h1>
+    <p>時間帯：{{ zone }} / {{ time }}</p>
+
+    {% if video_id %}
+    <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/{{ video_id }}" allowfullscreen></iframe>
+    </div>
+    {% endif %}
+
+    <a class="song-title"
+       href="https://www.youtube.com/watch?v={{ video_id }}"
+       target="_blank">{{ title }}</a>
+
+    <button class="main-btn" onclick="location.reload()">別の曲を試す</button>
+
+    {% if footer %}
+    <div class="footer-text">{{ footer }}</div>
+    {% endif %}
+</div>
+
+</body>
+</html>
+"""
 
 
 @app.route("/")
@@ -1449,17 +1844,33 @@ def get_random_video(no_repeat=False):
 @app.route("/about")
 def about():
     return render_template_string(ABOUT_HTML)
-# 調整用
+# 調整用----------------------------------------------------------------------------
+
 @app.route("/dev")
 def dev():
-    video_id = get_random_video()
-    title = ALL_VIDEOS.get(video_id, "不明な曲")
+    zone_override = request.args.get("zone")
+    no_repeat = request.args.get("no_repeat") == "true"
+
+    hour = get_current_hour()
+    zone = zone_override if zone_override in TIME_LABEL else get_time_zone(hour)
+    now = datetime.now(JST)
+
+    video_id = random.choice(DEV_ALL_VIDEOS)
+    title = DEV_VIDEO_TITLES.get(video_id, "")
 
     return render_template_string(
-        HTML,
+        DEV_HTML,
+        label=TIME_LABEL[zone],
+        zone=zone,
+        time=now.strftime("%H:%M"),
+        bg=BG_COLOR[zone],
+        footer=FOOTER_TEXT[zone],
         video_id=video_id,
         title=title,
-        dev=True
+        text_main=TEXT_COLOR_MAIN[zone],
+        text_sub=TEXT_COLOR_SUB[zone],
+        text_faint=TEXT_COLOR_FAINT[zone],
+        song_count=len(DEV_ALL_VIDEOS),
     )
 
 @app.errorhandler(404)
