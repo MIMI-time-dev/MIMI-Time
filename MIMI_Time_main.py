@@ -82,6 +82,8 @@ BG_COLOR = {
 
 # 動画ID------------------------------------------------------
 ALL_VIDEOS = [
+    #リリース限定(一般公開されてるもの)
+    "lfFokUaq2Vk",
     #1,アルバム収録曲
     "spoQeZea7s8",
     "56Na2tuPOXs",
@@ -200,6 +202,8 @@ ALL_VIDEOS = [
 
 
 # VIDEO_TITLES = {
+#     #リリース限定(一般公開されてるもの)
+#      "lfFokUaq2Vk":"光の残り方",
 #     #1,アルバム収録曲
 #     "spoQeZea7s8":"淡さと微睡む",
 #     "56Na2tuPOXs":"れじぇろ",
@@ -313,6 +317,8 @@ ALL_VIDEOS = [
 
 # dev用ALL_VIDEOS------------------------------------------
 DEV_ALL_VIDEOS = [
+    #リリース限定(一般公開されてるもの)
+    "lfFokUaq2Vk",
     #1,アルバム収録曲
     "spoQeZea7s8",
     "56Na2tuPOXs",
@@ -427,6 +433,8 @@ DEV_ALL_VIDEOS = [
 
 # dev用タイトル辞書------------------------------------------
 DEV_VIDEO_TITLES = {
+    #リリース限定(一般公開されてるもの)
+    "lfFokUaq2Vk":"光の残り方",
     #1,アルバム収録曲
     "spoQeZea7s8":"淡さと微睡む",
     "56Na2tuPOXs":"れじぇろ",
@@ -1193,6 +1201,8 @@ font-weight:500;
 
   <!-- 直近の更新履歴 -->
   <div class="update-list">
+    26.4.5 楽曲追加<br>
+    26.4.5 開発者モードの追加<br>
     26.4.5 重複IDの削除<br>
     26.3.25 楽曲追加<br>
     26.3.8 Twitter(X)共有機能を追加<br>
@@ -1714,8 +1724,10 @@ p { margin: 6px 0; color: {{ text_sub }}; }
 }
 
 .main-btn:hover {
-    background: rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.25);
 }
+
+
 
 .main-btn:hover {
     background: rgba(255,255,255,0.25);
