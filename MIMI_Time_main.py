@@ -944,6 +944,21 @@ font-weight:500;
             <input type="checkbox" id="noRepeatToggle">
             さらにランダムにする
         </label>
+        
+<hr>
+
+<a href="/dev" style="color:#aaa; font-size:14px;">
+<button onclick="location.href='/dev'" style="
+  margin-top:10px;
+  padding:8px 12px;
+  border-radius:8px;
+  background:#222;
+  color:#e6e8ff;
+  border:none;
+">
+  開発モード
+</button>
+</a>
 
 <hr>
 
@@ -1434,6 +1449,18 @@ def get_random_video(no_repeat=False):
 @app.route("/about")
 def about():
     return render_template_string(ABOUT_HTML)
+# 調整用
+@app.route("/dev")
+def dev():
+    video_id = get_random_video()
+    title = ALL_VIDEOS.get(video_id, "不明な曲")
+
+    return render_template_string(
+        HTML,
+        video_id=video_id,
+        title=title,
+        dev=True
+    )
 
 @app.errorhandler(404)
 def not_found(e):
