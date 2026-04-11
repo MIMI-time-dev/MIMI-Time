@@ -1797,7 +1797,8 @@ def index():
 
     no_repeat = request.args.get("no_repeat") == "true"
     video_id = get_random_video(no_repeat)
-    title = get_title(video_id)
+    title = VIDEO_TITLES.get(video_id, "")
+#     title = get_title(video_id)
     
     return render_template_string(
         HTML,
