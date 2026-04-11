@@ -29,7 +29,7 @@ def get_time_zone(hour):
     elif 19 <= hour < 23:
         return "night"
     else:
-        return "late night"
+         return "late night"
 # 表示テキスト------------------------------------------------
 TIME_LABEL = {
     "morning": "前向きな朝に",
@@ -46,6 +46,8 @@ FOOTER_TEXT = {
     "night": "そっと寄り添えるように",
     "late night": "眠れない夜のために",
 }
+
+
 
 # 色設定------------------------------------------------------
 TEXT_COLOR_MAIN = {
@@ -199,117 +201,117 @@ ALL_VIDEOS = [
 #     print(f"https://www.youtube.com/watch?v={ i }")
 
 
-# VIDEO_TITLES = {
-#     #1,アルバム収録曲
-#     "spoQeZea7s8":"淡さと微睡む",
-#     "56Na2tuPOXs":"れじぇろ",
-#     "VRhZgfFOvZQ":"アンダー",
-#     "w3S9o1kSpqE":"水流音楽",
-#     "5Zz_00sjwW0":"いいじゃない",
-#     #2,アルバム収録曲（現時点での）
-#     "RO6Z16icc8c":"大丈夫だよ。 (feat. 可不)",
-#     #最新曲---------------------------------------------------
-#     "IxVFW1XIW7Q":"『花びら哀歌』/ feat. 重音テトSV",
-#     "-2FCAZLhh-Y":"『 柔く、ほどいて 』 / feat.初音ミク＆重音テトSV",
-#     "iUXrTnEeqRw":"『それでも優しかった君へ』/ MIMI feat.沖石",
-#     "uoYegcqyfxE":"『トリックハート』 / feat.重音テトSV",
-#     "8gcrKkXTx64":"『声の欠片』/ MIMI feat. 月",
-#     "Wiz0Ap2ge5U":"『星涙哀歌』/ MIMI feat. 初音ミク",
-#     "ZzBp3xUHvis":"『凪と藍空』 / MIMI feat. マス",
-#     "VPK-lxmGyDk":"『 愛されたいって願ってる 』/ MIMI feat. 可不",
-#     "wW1UjAtAZ1A":"『痛いの痛いの飛んでいけっ』 / MIMI feat. saewool (Music Video)",
-#     }
-#     "tHo25oDiNNY",
-#     "TC80uw4HgCw",
-#     "Td9YlfLfXzM",
-#     "5uHtY6DpRi4",
-#     "Mb_bFtcyg3E",
-#     "HhEJsD-ZOJU",
-#     "NNgCHHgJ2W8", #Session
-#     "N5YD6SEVwKs",
-#     "iiPet5Z6vmg",
-#     "5ImdVATcfKs",
-#     "LKyLOLosp54",
-#     "-yRWO4ODgQQ",
-#     "5hgSET4bpbk",
-#     "mCYjEWWsqZ8",
-#     "qDV_zAf9T6g",
-#     "m-bvW4pKT68",
-#     "sU9GBNnoEmA",
-#     "ConmlXSnM0E",
-#     "HkTihNKCWFA",
-#     "JE_GFOk90oU", #Session
-#     "dgkP8RQw-sQ",
-#     "7WXadfU7UOk",
-#     "9OiYX68L0BU",
-#     "Hvt59Q47M8k",
-#     "6f3GJ3uUc34",
-#     "qXvVt75kNmE",
-#     "bqyENYGSQzg",
-#     "q8Ap-1MUTew",
-#     "uUB2qgVBBjY",
-#     "ZiUwbmrMiAY",
-#     "p3Geomh2EuY",
-#     "lEoDjtCm488",
-#     "vAFoNaPZ5Pk",
-#     "rNZiCyCVIBQ",
-#     "xQYp4-Ett6A",
-#     "CHP7xCe8454",
-#     "Rpe5gphy3Dg",
-#     "tW6pTE_ENeo",
-#     "PAwZl3Up-hc",
-#     "FXNUn2KzcE8",
-#     "NihQBHOZLIw",
-#     "xgNeFTCzpgo",
-#     "YXCBQDK4DlE",
-#     "zQqIm-EVlkQ",
-#     "ArqagB9P1Qs",
-#     "SrdCXBZs4j8",
-#     "cGGlBYzZiJs",
-#     "ioW9iGDpQyw",
-#     "hupkoU8e1is",
-#     "f6TytcA47rI",
-#     "UZTcXWLf2Ek",
-#     "filTeBL7mA0",
-#     "o2CD3DjPHmU",
-#     "340OXvocRMM",
-#     "M50V-UBjqcI",
-#     "eurJC5ElRPE",
-#     "7xht3kQO_TM",
-#     "HyQK7IssB9M",
-#     "sVqtVjtRcN8",
-#     "_eBe5rD73Eg",
-#     "S2AhFrGXa8I",
-#     "vULemZ6DhM8",
-#     "1gSMjPLRJik",
-#     "XiKZE967BD4",
-#     "sFoWYa6QNKk",
-#     "yIo2ePCm4bY",
-#     "exo3XdtPrgs",
-#     "tI4nhL7qQdk",
-#     "vLigCJOcHOE",
-#     "PJrjwIlWVXA",
-#     "P_DgrvZmXM0",
-#     "06YWg6Y1kxo",
-#     "r5xaccIl1Ps",
-#     "Ou8sl4s3NJg",
-#     "Ziz_ckzVjyA",
-#     "Txh4DZmcbPk",
-#     "ZTFQs7MspEI",
-#     "UGzd2dnkhME",
-#     "89p7DWIqOu8",
-#     "pcRaY5kq4YY",
-#     "Q5XzviXSHQ4",
-#     "qtuX4cHk-vE",
-#     "rzamOqbbBfQ",
-#     "QJaY60vjSxw",
-#     "w4fxj1toPzc",
-#     "AfteRl4ePBc",
-#     "lnfYoNLrMJE",
-#     "qivTJhNbqUc",
-#     "SBlkzGiM5uE",
-#     # 全曲リスト
-#     ]
+# メイン用タイトル辞書------------------------------------------
+VIDEO_TITLES = {
+    #1,アルバム収録曲
+    "spoQeZea7s8":"淡さと微睡む",
+    "56Na2tuPOXs":"れじぇろ",
+    "VRhZgfFOvZQ":"アンダー",
+    "w3S9o1kSpqE":"水流音楽",
+    "5Zz_00sjwW0":"いいじゃない",
+    #2,アルバム収録曲（現時点での）
+    "RO6Z16icc8c":"大丈夫だよ。 (feat. 可不)",
+    #最新曲---------------------------------------------------
+    "IxVFW1XIW7Q":"『花びら哀歌』/ feat. 重音テトSV",
+    "-2FCAZLhh-Y":"『 柔く、ほどいて 』 / feat.初音ミク＆重音テトSV",
+    "iUXrTnEeqRw":"『それでも優しかった君へ』/ MIMI feat.沖石",
+    "uoYegcqyfxE":"『トリックハート』 / feat.重音テトSV",
+    "8gcrKkXTx64":"『声の欠片』/ MIMI feat. 月",
+    "Wiz0Ap2ge5U":"『星涙哀歌』/ MIMI feat. 初音ミク",
+    "ZzBp3xUHvis":"『凪と藍空』 / MIMI feat. マス",
+    "VPK-lxmGyDk":"『 愛されたいって願ってる 』/ MIMI feat. 可不",
+    "wW1UjAtAZ1A":"『痛いの痛いの飛んでいけっ』 / MIMI feat. saewool (Music Video)",
+    "tHo25oDiNNY":"『海辺の電話ボックス』/ feat. 音街ウナSV",
+    "TC80uw4HgCw":"『マジック・メイド』 / feat.重音テトSV",
+    "Td9YlfLfXzM":"『 愛してランデブー 』/ feat. 初音ミク",
+    "5uHtY6DpRi4":"『余熱 』/ feat. 初音ミク",
+    "Mb_bFtcyg3E":"『もしも』 / MIMI feat. マス",
+    "HhEJsD-ZOJU":"『ラベンダー』 / MIMI feat. saewool (Music Video)",
+    "NNgCHHgJ2W8":"MIMI 2AM. Study Session", #Session
+    "N5YD6SEVwKs":"『シャボン』/ feat.初音ミク",
+    "iiPet5Z6vmg":"『恋しくなったら手を叩こう』/ MIMI feat.花鏡紅璃",
+    "5ImdVATcfKs":"『恋しくなったら手を叩こう』 / feat.重音テトSV",
+    "LKyLOLosp54":"『お砂糖哀歌』 / feat. 初音ミク",
+    "-yRWO4ODgQQ":"『夜と幸せ』/MIMI feat. 詩の出素。 (Music Video)",
+    "5hgSET4bpbk":"『アンコールダンス』/ feat. 重音テトSV",
+    "mCYjEWWsqZ8":"『天使の涙』 / feat.初音ミク",
+    "qDV_zAf9T6g":"『ソルティメロウ』 / feat. 可不",
+    "m-bvW4pKT68":"MIMI - サイエンス (feat.重音テトSV)",
+    "sU9GBNnoEmA":"『星恋歌 』/ MIMI feat.しょうゆ",
+    "ConmlXSnM0E":"『星恋歌 』/ feat. 初音ミク",
+    "HkTihNKCWFA":"『劣等哀歌』 / feat. 初音ミク＆重音テトSV",
+    "JE_GFOk90oU":"MIMI 1AM. Study Session", #Session
+    "dgkP8RQw-sQ":"『茜の鼓動 』/ feat. 初音ミク",
+    "7WXadfU7UOk":"『夜風に吹かれて口笛を』/ MIMI feat. 花鏡紅璃",
+    "9OiYX68L0BU":"『To U』 / feat. 初音ミク",
+    "Hvt59Q47M8k":"『消えない温度』 / feat. 可不",
+    "6f3GJ3uUc34":"『音の灯火』 / feat.詩の出素。",
+    "qXvVt75kNmE":"微熱のリリック / feat. 重音テトSV",
+    "bqyENYGSQzg":"『すろーりーないと』 / feat. 初音ミク",
+    "q8Ap-1MUTew":"『わたしまだBABY』 / feat. 狐子",
+    "uUB2qgVBBjY":"UNFADING / feat. 初音ミク",
+    "ZiUwbmrMiAY":"『解答』 / MIMI feat.わん子",
+    "p3Geomh2EuY":"『 ツキミチシルベ 』 / feat. 初音ミク ＆ 可不",
+    "lEoDjtCm488":"『触れていたいだけ』/ MIMI feat. 月 (Music Video)",
+    "vAFoNaPZ5Pk":"『ありあ』 / feat. 可不",
+    "rNZiCyCVIBQ":"『頂戴な』/ MIMI feat. 沖石",
+    "xQYp4-Ett6A":"『愛し愛』 / feat. 初音ミク ・ 可不",
+    "CHP7xCe8454":"『 それで充分だよ。』/ feat. 可不",
+    "Rpe5gphy3Dg":"『Lilly 』/ MIMI",
+    "tW6pTE_ENeo":"『始点前夕暮れ』 / feat. 初音ミク",
+    "PAwZl3Up-hc":"『 はぐ 』 / 初音ミク・可不",
+    "FXNUn2KzcE8":"『心を刺す言葉だけ』/ feat. 初音ミク＆可不",
+    "NihQBHOZLIw":"『 Maple 』/ feat. 羽累",
+    "xgNeFTCzpgo":"『フィオーレ 』/ feat. 初音ミク＆可不",
+    "YXCBQDK4DlE":"『Without Knowing』 / MIMI feat. アカラカイ",
+    "zQqIm-EVlkQ":"『コウフク貯金』 / feat. 初音ミク",
+    "ArqagB9P1Qs":"『息をするだけ』/ feat. 可不",
+    "SrdCXBZs4j8":"『What Call This Day ? 』/ MIMI feat. にんじん (from ロクデナシ)",
+    "cGGlBYzZiJs":"『サヨナラは言わないでさ 』/ feat. 可不",
+    "ioW9iGDpQyw":"『妄想哀歌』/ feat. 初音ミク＆可不",
+    "hupkoU8e1is":"『 わたしマニュアル (Original Arrange Ver.) 』/ MIMI feat. 可不",
+    "f6TytcA47rI":"『くうになる』 / feat. 初音ミク ＆ 可不",
+    "UZTcXWLf2Ek":"『GLACIES』/ MIMI feat. 初音ミク",
+    "filTeBL7mA0":"『ロココ 』/ feat. 初音ミク",
+    "o2CD3DjPHmU":"『オマジナイ』 ( long ver. ) / 可不",
+    "340OXvocRMM":"『 今はいいんだよ。』/ feat. 可不",
+    "M50V-UBjqcI":"『 夜のあいろに 』/ feat. 初音ミク",
+    "eurJC5ElRPE":"『 ポシェット 』/ feat. 可不",
+    "7xht3kQO_TM":"『 ハナタバ 』/ MIMI feat. 可不",
+    "HyQK7IssB9M":"『 愛するように 』/ feat. 可不",
+    "sVqtVjtRcN8":"『ぽけっと・愛の歌』/ feat. 裏命",
+    "_eBe5rD73Eg":"『 あのね 』/ feat. 可不",
+    "S2AhFrGXa8I":"『みにまむ』/ MIMI feat. わん子",
+    "vULemZ6DhM8":"『風鈴歌』 / feat. 初音ミク",
+    "1gSMjPLRJik":"『ヒミツ 』/ feat. 可不",
+    "XiKZE967BD4":"『えすけーぷ』/ feat. 星界",
+    "sFoWYa6QNKk":"『ぎゅって』/ feat. 初音ミク",
+    "yIo2ePCm4bY":"『 だきしめるまで。』/ feat. 可不",
+    "exo3XdtPrgs":"『もーいいかい』/ feat. 初音ミク",
+    "tI4nhL7qQdk":"『LyriC』 / MIMI",
+    "vLigCJOcHOE":"『いっせーのーで』/ feat. 可不",
+    "PJrjwIlWVXA":"『よるつむぎ』/ feat. 初音ミク",
+    "P_DgrvZmXM0":"『もでらーと 』/ MIMI feat. わん子",
+    "06YWg6Y1kxo":"MIMI『 Pale 』feat. 初音ミク",
+    "r5xaccIl1Ps":"SorrowChat / feat. 初音ミク",
+    "Ou8sl4s3NJg":"ゆめまぼろし / feat. 初音ミク",
+    "Ziz_ckzVjyA":"MIMI『ルルージュ』feat.初音ミク",
+    "Txh4DZmcbPk":"そして夜と灯る / feat.初音ミク",
+    "ZTFQs7MspEI":"Cold Waltz - in G Minor MIMI",
+    "UGzd2dnkhME":"夜明け前に飛び乗って / feat. 初音ミク",
+    "89p7DWIqOu8":"カラバコにアイ / feat.初音ミク",
+    "pcRaY5kq4YY":"静寂に咲く / feat.初音ミク",
+    "Q5XzviXSHQ4":"何もない様な / feat.初音ミク",
+    "qtuX4cHk-vE":"マシュマリー / feat.初音ミク",
+    "rzamOqbbBfQ":"モーメント / feat.初音ミク",
+    "QJaY60vjSxw":"【初音ミク】 水音とカーテン 【オリジナル曲】",
+    "w4fxj1toPzc":"【オリジナル曲】「NOREEN」",
+    "AfteRl4ePBc":"【初音ミク】 ミライリフレクト　【オリジナル曲】",
+    "lnfYoNLrMJE":"【初音ミク】parabola【オリジナル曲】",
+    "qivTJhNbqUc":"【初音ミク】　透明夏　【オリジナル曲】",
+    "SBlkzGiM5uE":"【初音ミク】「ラピスラズリ」【オリジナル曲】",
+    # 全曲リスト
+    }
 
 # dev用ALL_VIDEOS------------------------------------------
 DEV_ALL_VIDEOS = [
@@ -1115,7 +1117,7 @@ summary {
 .secret-message {
     font-size: 14px;
     margin: 12px 0 20px 0;
-    color: rgba(255,255,255,0.88);  /* 0.82 → 0.88 */
+    color: rgba(255,255,255,0.88); 
     line-height: 1.8;
 }
 
@@ -1130,7 +1132,7 @@ text-align:center;
 word-break:keep-all;
 overflow-wrap:break-word;
 opacity:0.85;
-color:#a9a9a9;
+color: #95999d;
 text-decoration:none;
 }
 
@@ -1153,6 +1155,8 @@ text-decoration:none;
 color:#808080;
 font-weight:500;
 }
+
+
 
 </style>
 </head>
@@ -1193,6 +1197,7 @@ font-weight:500;
 
   <!-- 直近の更新履歴 -->
   <div class="update-list">
+    26.4.11 楽曲情報の表示を追加<br>
     26.4.5 開発者モードの追加<br>
     26.4.5 重複IDの削除<br>
     26.3.25 楽曲追加<br>
@@ -1224,7 +1229,7 @@ font-weight:500;
   <summary>更新状況</summary>
   <div class="update-list">
     1,修正コードの作成<br>
-    2,曲名表示機能の作成<br>
+    2,全曲（提供曲）の登録<br>
   </div>
 </details>
 
@@ -1509,6 +1514,9 @@ function resetSecret() {
 </div>    
 
 </div>
+
+</body>
+</div>
 </body>
 </html>
 """
@@ -1748,6 +1756,7 @@ p { margin: 6px 0; color: {{ text_sub }}; }
 </div>
 
 <div class="container">
+
     <h1>{{ label }}</h1>
     <p>時間帯：{{ zone }} / {{ time }}</p>
 
