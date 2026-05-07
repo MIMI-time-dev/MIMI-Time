@@ -93,7 +93,7 @@ ALL_VIDEOS = [
     #2,アルバム収録曲（現時点での）
     "RO6Z16icc8c",
     #最新曲---------------------------------------------------
-    "1EevjGF2nuU",
+    "8FxQ606Fqcc",
     "x0APPrPgexY",
     "IxVFW1XIW7Q",
     "-2FCAZLhh-Y",
@@ -214,7 +214,7 @@ VIDEO_TITLES = {
     #2,アルバム収録曲（現時点での）
     "RO6Z16icc8c":"大丈夫だよ。 (feat. 可不)",
     #最新曲---------------------------------------------------
-    "1EevjGF2nuU":"MIMI - 『ぴょん』 feat. 初音ミク＆重音テトSV",
+    "8FxQ606Fqcc":"『 FLOAT 』 / MIMI feat. saewool (Music Video)",
     "x0APPrPgexY":"『月夜』/ MIMI feat. 宵 (Music Video)",
     "IxVFW1XIW7Q":"『花びら哀歌』/ feat. 重音テトSV",
     "-2FCAZLhh-Y":"『 柔く、ほどいて 』 / feat.初音ミク＆重音テトSV",
@@ -1203,6 +1203,7 @@ font-weight:500;
 
   <!-- 直近の更新履歴 -->
   <div class="update-list">
+    26.4.19 楽曲追加<br>
     26.4.11 楽曲情報の表示を追加<br>
     26.4.5 開発者モードの追加<br>
     26.4.5 重複IDの削除<br>
@@ -1913,7 +1914,8 @@ def not_found(e):
     </style>
     </head>
     <body>
-        <h1>ページが見つかりませんでした</h1>
+        <h1>404 not found</h1>
+        <p>ページが見つかりませんでした</p>
         <p>現在このページは表示できません</p>
         <br>
         <a href="/main">もう一度試す</a>
@@ -1942,7 +1944,8 @@ def server_error(e):
     </style>
     </head>
     <body>
-        <h1>サーバーでエラーが発生しました</h1>
+        <h1>500 Internal Server Error</h1>
+        <p>サーバーでエラーが発生しました</p>
         <p>現在この曲は表示できません</p>
         <br>
         <a href="/main">もう一度試す</a>
