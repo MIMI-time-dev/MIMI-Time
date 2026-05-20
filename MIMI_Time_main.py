@@ -93,6 +93,7 @@ ALL_VIDEOS = [
     #2,アルバム収録曲（現時点での）
     "RO6Z16icc8c",
     #最新曲---------------------------------------------------
+    "hMdpXVzjSAE",
     "8FxQ606Fqcc",
     "1EevjGF2nuU",
     "x0APPrPgexY",
@@ -215,6 +216,7 @@ VIDEO_TITLES = {
     #2,アルバム収録曲（現時点での）
     "RO6Z16icc8c":"大丈夫だよ。 (feat. 可不)",
     #最新曲---------------------------------------------------
+    "hMdpXVzjSAE":"『ソラの議事録』 / feat. 初音ミク",
     "8FxQ606Fqcc":"『 FLOAT 』 / MIMI feat. saewool (Music Video)",
     "1EevjGF2nuU":"『ぴょん』/ feat. 初音ミク＆重音テトSV",
     "x0APPrPgexY":"『月夜』/ MIMI feat. 宵 (Music Video)",
