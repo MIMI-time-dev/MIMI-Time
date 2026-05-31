@@ -77,7 +77,7 @@ TEXT_COLOR_FAINT = {
 BG_COLOR = {
     "morning": "#E3ECFF",
     "day": "#D6EEF9",
-    "evening": "#FFD6C9",
+    "evening": "#ffd6ad",
     "night": "#1E1E3F",
     "late night": "#0B0B1A"
 }
