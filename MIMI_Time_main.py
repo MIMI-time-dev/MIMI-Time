@@ -1257,6 +1257,8 @@ font-weight:500;
     記載している動画はYouTube公式の埋め込み機能を使用しています。<br>
     各動画の著作権はそれぞれの権利者様に帰属します。<br>
     X（旧Twitter）はX Corp.の商標です。<br><br>
+    本サイトにおいて生成AIによる画像の使用及び他サイトの学習は行っていません。<br>
+    This site does not use AI-generated images, nor does it train its models using data from other sites.<br><br>
     Music and artwork belong to their respective owners.<br><br>
     ソースコードはGitHubで公開しています。<br>
     Source code is available on GitHub.<br>
@@ -1603,6 +1605,13 @@ body {
 
 <p>
 掲載している動画は、YouTube公式の埋め込み機能を利用しています。  
+</p>
+
+<p>
+本サイトにおいて生成AIによる画像の使用及び他サイトの学習は行っていません。
+</p>
+<p>
+This site does not use AI-generated images, nor does it train its models using data from other sites.
 </p>
 
 <p>本サイトは非営利目的で運営しています。</p>
