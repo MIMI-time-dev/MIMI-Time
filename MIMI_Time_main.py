@@ -925,6 +925,32 @@ body.late-night .main-btn {
     align-items: center;
     z-index: 2000;
 }
+/* このサイトについて */
+#aboutBtn {
+    position: absolute;
+    top: 22px;
+    right: 95px;
+
+    padding: 5px 14px;
+    border-radius: 999px;
+
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.25);
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    transition: all 0.2s ease;
+}
+
+#aboutBtn:hover {
+    background: rgba(0,0,0,0.5);
+}
 
 /* 設定 */
 #settingsModal {
@@ -1176,7 +1202,11 @@ font-weight:500;
 
 
 <body class="{{ zone }}">
-
+<a id="aboutBtn"
+   href="https://mimi-time-dev.github.io/mimi-time-policy/"
+   target="_blank">
+   MIMI Timeについて
+</a>
 <button id="settingsBtn">設定</button>
 
 <div id="overlay">
@@ -1256,10 +1286,8 @@ font-weight:500;
     商用利用は禁止します。<br>
     記載している動画はYouTube公式の埋め込み機能を使用しています。<br>
     各動画の著作権はそれぞれの権利者様に帰属します。<br>
-    X（旧Twitter）はX Corp.の商標です。<br><br>
-    本サイトにおいて生成AIによる画像の使用及び他サイトの学習は行っていません。<br>
-    This site does not use AI-generated images, nor does it train its models using data from other sites.<br><br>
-    Music and artwork belong to their respective owners.<br><br>
+    X（旧Twitter）はX Corp.の商標です。<br>
+    生成AIの利用に関する詳細は　MIMI Timeについて　をご覧ください。<br><br>
     ソースコードはGitHubで公開しています。<br>
     Source code is available on GitHub.<br>
 <a href="https://github.com/MIMI-time-dev/MIMI-Time" target="_blank" rel="noopener noreferrer">GitHubへ移動</a><br>
@@ -1608,10 +1636,7 @@ body {
 </p>
 
 <p>
-本サイトにおいて生成AIによる画像の使用及び他サイトの学習は行っていません。
-</p>
-<p>
-This site does not use AI-generated images, nor does it train its models using data from other sites.
+生成AIの利用に関する詳細は　MIMI Timeについて　をご覧ください。
 </p>
 
 <p>本サイトは非営利目的で運営しています。</p>
