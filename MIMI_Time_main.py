@@ -323,7 +323,7 @@ VIDEO_TITLES = {
 
 # dev用ALL_VIDEOS------------------------------------------
 DEV_ALL_VIDEOS = [
-    #1,アルバム収録曲
+#     #1,アルバム収録曲
 #     "spoQeZea7s8",
 #     "56Na2tuPOXs",
 #     "VRhZgfFOvZQ",
@@ -335,105 +335,6 @@ DEV_ALL_VIDEOS = [
     "OQvIBUvto5U",
     "x0APPrPgexY",
     "IxVFW1XIW7Q",
-#     "-2FCAZLhh-Y",
-#     "iUXrTnEeqRw",
-#     "uoYegcqyfxE",
-#     "8gcrKkXTx64",
-#     "Wiz0Ap2ge5U",
-#     "ZzBp3xUHvis",
-#     "VPK-lxmGyDk",
-#     "wW1UjAtAZ1A",
-#     "tHo25oDiNNY",
-#     "TC80uw4HgCw",
-#     "Td9YlfLfXzM",
-#     "5uHtY6DpRi4",
-#     "Mb_bFtcyg3E",
-#     "HhEJsD-ZOJU",
-#     "NNgCHHgJ2W8", #Session
-#     "N5YD6SEVwKs",
-#     "iiPet5Z6vmg",
-#     "5ImdVATcfKs",
-#     "LKyLOLosp54",
-#     "-yRWO4ODgQQ",
-#     "5hgSET4bpbk",
-#     "mCYjEWWsqZ8",
-#     "qDV_zAf9T6g",
-#     "m-bvW4pKT68",
-#     "sU9GBNnoEmA",
-#     "ConmlXSnM0E",
-#     "HkTihNKCWFA",
-#     "JE_GFOk90oU", #Session
-#     "dgkP8RQw-sQ",
-#     "7WXadfU7UOk",
-#     "9OiYX68L0BU",
-#     "Hvt59Q47M8k",
-#     "6f3GJ3uUc34",
-#     "qXvVt75kNmE",
-#     "bqyENYGSQzg",
-#     "q8Ap-1MUTew",
-#     "uUB2qgVBBjY",
-#     "ZiUwbmrMiAY",
-#     "p3Geomh2EuY",
-#     "lEoDjtCm488",
-#     "vAFoNaPZ5Pk",
-#     "rNZiCyCVIBQ",
-#     "xQYp4-Ett6A",
-#     "CHP7xCe8454",
-#     "Rpe5gphy3Dg",
-#     "tW6pTE_ENeo",
-#     "PAwZl3Up-hc",
-#     "FXNUn2KzcE8",
-#     "NihQBHOZLIw",
-#     "xgNeFTCzpgo",
-#     "YXCBQDK4DlE",
-#     "zQqIm-EVlkQ",
-#     "ArqagB9P1Qs",
-#     "SrdCXBZs4j8",
-#     "cGGlBYzZiJs",
-#     "ioW9iGDpQyw",
-#     "hupkoU8e1is",
-#     "f6TytcA47rI",
-#     "UZTcXWLf2Ek",
-#     "filTeBL7mA0",
-#     "o2CD3DjPHmU",
-#     "340OXvocRMM",
-#     "M50V-UBjqcI",
-#     "eurJC5ElRPE",
-#     "7xht3kQO_TM",
-#     "HyQK7IssB9M",
-#     "sVqtVjtRcN8",
-#     "_eBe5rD73Eg",
-#     "S2AhFrGXa8I",
-#     "vULemZ6DhM8",
-#     "1gSMjPLRJik",
-#     "XiKZE967BD4",
-#     "sFoWYa6QNKk",
-#     "yIo2ePCm4bY",
-#     "exo3XdtPrgs",
-#     "tI4nhL7qQdk",
-#     "vLigCJOcHOE",
-#     "PJrjwIlWVXA",
-#     "P_DgrvZmXM0",
-#     "06YWg6Y1kxo",
-#     "r5xaccIl1Ps",
-#     "Ou8sl4s3NJg",
-#     "Ziz_ckzVjyA",
-#     "Txh4DZmcbPk",
-#     "ZTFQs7MspEI",
-#     "UGzd2dnkhME",
-#     "89p7DWIqOu8",
-#     "pcRaY5kq4YY",
-#     "Q5XzviXSHQ4",
-#     "qtuX4cHk-vE",
-#     "rzamOqbbBfQ",
-#     "QJaY60vjSxw",
-#     "w4fxj1toPzc",
-#     "AfteRl4ePBc",
-#     "lnfYoNLrMJE",
-#     "qivTJhNbqUc",
-#     "SBlkzGiM5uE",
-    # 全曲リスト
-    
 
 ]
 
@@ -451,106 +352,7 @@ DEV_VIDEO_TITLES = {
     "OQvIBUvto5U":"『ソラの議事録』 / feat. 初音ミク",
     "x0APPrPgexY":"『月夜』/ MIMI feat. 宵 (Music Video)",
     "IxVFW1XIW7Q":"『花びら哀歌』/ feat. 重音テトSV",
-#     "-2FCAZLhh-Y":"『 柔く、ほどいて 』 / feat.初音ミク＆重音テトSV",
-#     "iUXrTnEeqRw":"『それでも優しかった君へ』/ MIMI feat.沖石",
-#     "uoYegcqyfxE":"『トリックハート』 / feat.重音テトSV",
-#     "8gcrKkXTx64":"『声の欠片』/ MIMI feat. 月",
-#     "Wiz0Ap2ge5U":"『星涙哀歌』/ MIMI feat. 初音ミク",
-#     "ZzBp3xUHvis":"『凪と藍空』 / MIMI feat. マス",
-#     "VPK-lxmGyDk":"『 愛されたいって願ってる 』/ MIMI feat. 可不",
-#     "wW1UjAtAZ1A":"『痛いの痛いの飛んでいけっ』 / MIMI feat. saewool (Music Video)",
-     }
-#     "tHo25oDiNNY",
-#     "TC80uw4HgCw",
-#     "Td9YlfLfXzM",
-#     "5uHtY6DpRi4",
-#     "Mb_bFtcyg3E",
-#     "HhEJsD-ZOJU",
-#     "NNgCHHgJ2W8", #Session
-#     "N5YD6SEVwKs",
-#     "iiPet5Z6vmg",
-#     "5ImdVATcfKs",
-#     "LKyLOLosp54",
-#     "-yRWO4ODgQQ",
-#     "5hgSET4bpbk",
-#     "mCYjEWWsqZ8",
-#     "qDV_zAf9T6g",
-#     "m-bvW4pKT68",
-#     "sU9GBNnoEmA",
-#     "ConmlXSnM0E",
-#     "HkTihNKCWFA",
-#     "JE_GFOk90oU", #Session
-#     "dgkP8RQw-sQ",
-#     "7WXadfU7UOk",
-#     "9OiYX68L0BU",
-#     "Hvt59Q47M8k",
-#     "6f3GJ3uUc34",
-#     "qXvVt75kNmE",
-#     "bqyENYGSQzg",
-#     "q8Ap-1MUTew",
-#     "uUB2qgVBBjY",
-#     "ZiUwbmrMiAY",
-#     "p3Geomh2EuY",
-#     "lEoDjtCm488",
-#     "vAFoNaPZ5Pk",
-#     "rNZiCyCVIBQ",
-#     "xQYp4-Ett6A",
-#     "CHP7xCe8454",
-#     "Rpe5gphy3Dg",
-#     "tW6pTE_ENeo",
-#     "PAwZl3Up-hc",
-#     "FXNUn2KzcE8",
-#     "NihQBHOZLIw",
-#     "xgNeFTCzpgo",
-#     "YXCBQDK4DlE",
-#     "zQqIm-EVlkQ",
-#     "ArqagB9P1Qs",
-#     "SrdCXBZs4j8",
-#     "cGGlBYzZiJs",
-#     "ioW9iGDpQyw",
-#     "hupkoU8e1is",
-#     "f6TytcA47rI",
-#     "UZTcXWLf2Ek",
-#     "filTeBL7mA0",
-#     "o2CD3DjPHmU",
-#     "340OXvocRMM",
-#     "M50V-UBjqcI",
-#     "eurJC5ElRPE",
-#     "7xht3kQO_TM",
-#     "HyQK7IssB9M",
-#     "sVqtVjtRcN8",
-#     "_eBe5rD73Eg",
-#     "S2AhFrGXa8I",
-#     "vULemZ6DhM8",
-#     "1gSMjPLRJik",
-#     "XiKZE967BD4",
-#     "sFoWYa6QNKk",
-#     "yIo2ePCm4bY",
-#     "exo3XdtPrgs",
-#     "tI4nhL7qQdk",
-#     "vLigCJOcHOE",
-#     "PJrjwIlWVXA",
-#     "P_DgrvZmXM0",
-#     "06YWg6Y1kxo",
-#     "r5xaccIl1Ps",
-#     "Ou8sl4s3NJg",
-#     "Ziz_ckzVjyA",
-#     "Txh4DZmcbPk",
-#     "ZTFQs7MspEI",
-#     "UGzd2dnkhME",
-#     "89p7DWIqOu8",
-#     "pcRaY5kq4YY",
-#     "Q5XzviXSHQ4",
-#     "qtuX4cHk-vE",
-#     "rzamOqbbBfQ",
-#     "QJaY60vjSxw",
-#     "w4fxj1toPzc",
-#     "AfteRl4ePBc",
-#     "lnfYoNLrMJE",
-#     "qivTJhNbqUc",
-#     "SBlkzGiM5uE",
-#     # 全曲リスト
-#     }
+    }
 
 #移動中表示-------------------------------------------
 
@@ -559,15 +361,41 @@ LOADING_HTML = """
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="1.2;url=/main">
 <title>MIMI Time</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500&display=swap" rel="stylesheet">
+
+<script>
+window.onload = function() {
+
+    setTimeout(() => {
+        document.getElementById("screen1").classList.remove("active");
+        document.getElementById("screen2").classList.add("active");
+    }, 1500);
+
+    setTimeout(() => {
+        document.getElementById("screen2").classList.remove("active");
+        document.getElementById("screen3").classList.add("active");
+    }, 3000);
+
+    setTimeout(() => {
+        document.getElementById("screen3").classList.remove("active");
+        document.getElementById("screen4").classList.add("active");
+    }, 4500);
+
+    setTimeout(() => {
+        window.location.href = "/main";
+    }, 6000);
+
+};
+</script>
 
 <style>
 body {
     margin: 0;
     height: 100vh;
+    overflow: hidden;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -576,42 +404,97 @@ body {
     font-family: 'Zen Maru Gothic', sans-serif;
 }
 
-.loading {
-    font-size: 2.2rem;
-    font-weight: 500;
-    color: rgba(255,255,255,0.9);
+.screen {
+    position: absolute;
+    text-align: center;
+    color: white;
 
     opacity: 0;
-    animation: fadeIn 0.8s ease forwards;
+    transition: opacity 1s ease;
+
+    width: 90%;
+}
+
+.screen.active {
+    opacity: 1;
+}
+
+.title {
+    font-size: 3.4rem;
+    line-height: 1.4;
+}
+
+.subtitle {
+    font-size: 2.2rem;
+    opacity: 0.85;
+}
+
+.message {
+    font-size: 3.4rem;
+    line-height: 1.8;
+}
+
+.credit {
+    font-size: 2.0rem;
+    line-height: 2;
+    opacity: 0.9;
+}
+
+.move-text {
+    margin-top: 30px;
+    font-size: 3rem;
+    opacity: 0.75;
 }
 
 .dots {
     display: inline-block;
-    animation: blink 1.2s infinite;
+    animation: blink 1.5s infinite;
 }
 
-/* フェードイン */
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
-
-/* ・・・点滅 */
 @keyframes blink {
     0% { opacity: 0.3; }
     50% { opacity: 1; }
     100% { opacity: 0.3; }
 }
 </style>
+
 </head>
 
 <body>
-<div class="loading">
-    MIMI Timeへ移動中<span class="dots">...</span>
+
+<div id="screen1" class="screen active">
+    <div class="title">
+        MIMI Time
+    </div>
+
+    <div class="subtitle">
+        10th Anniversary Edition
+    </div>
 </div>
+
+<div id="screen2" class="screen">
+    <div class="message">
+        Thank you for<br>
+        10 wonderful years.
+    </div>
+</div>
+
+<div id="screen3" class="screen">
+    <div class="credit">
+        From yu-sabu, the developer of MIMI Time.<br>
+        For MIMI and all MIMI Time users.
+    </div>
+</div>
+
+<div id="screen4" class="screen">
+    <div class="move-text">
+        MIMI Timeへ移動中<span class="dots">...</span>
+    </div>
+</div>
+
 </body>
 </html>
 """
-
 # HTML--------------------------------------------------------
 HTML = """
 <!DOCTYPE html>
@@ -626,6 +509,32 @@ HTML = """
 
 <style>
 
+
+/* 10周年リンク */
+.anniversary-btn{
+    display:inline-block;
+
+    margin:10px 0 18px;
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    text-decoration:none;
+    font-size:0.95rem;
+
+    transition:.2s;
+}
+body.day .anniversary-btn,
+body.morning .anniversary-btn,
+body.evening .anniversary-btn{
+    background:rgba(0,0,0,0.06);
+    color:#666;
+}
+body.night .anniversary-btn,
+body.late-night .anniversary-btn{
+    background:rgba(255,255,255,0.08);
+    color:#d7d0ff;
+}
 /* --------設定ボタン-------- */
 #settingsBtn {
     position: absolute;
@@ -715,7 +624,28 @@ body.late .about-link a {
 }
 
 /*------------------------------------------------------- */
+.anniversary-btn{
+    display:inline-block;
 
+    margin:6px 0 12px 0;
+    padding:4px 12px;
+
+    font-size:0.85rem;
+
+    color:{{ text_faint }};
+    text-decoration:none;
+
+    opacity:0.9;
+    transition:opacity .2s;
+}
+
+.anniversary-btn:hover{
+    opacity:1;
+}
+
+
+
+/*--------------------------------------------------------*/
 .container {
     max-width: 560px;
     margin: 0 auto;
@@ -925,6 +855,7 @@ body.late-night .main-btn {
     align-items: center;
     z-index: 2000;
 }
+
 /* このサイトについて */
 #aboutBtn {
     position: absolute;
@@ -951,6 +882,7 @@ body.late-night .main-btn {
 #aboutBtn:hover {
     background: rgba(0,0,0,0.5);
 }
+
 
 /* 設定 */
 #settingsModal {
@@ -1202,6 +1134,7 @@ font-weight:500;
 
 
 <body class="{{ zone }}">
+
 <a id="aboutBtn"
    href="https://mimi-time-dev.github.io/mimi-time-policy/"
    target="_blank">
@@ -1239,6 +1172,7 @@ font-weight:500;
 
   <!-- 直近の更新履歴 -->
   <div class="update-list">
+    26.06.07 期間限定のメッセージ追加<br>
     26.05.07 軽微な修正<br>
     26.04.19 楽曲追加<br>
     26.04.11 楽曲情報の表示を追加<br>
@@ -1306,6 +1240,9 @@ font-weight:500;
 
 <p class="subtitle">MIMIさんの曲に、ふと出会うための場所</p>
 
+<p><a href="/Anniversary" class="anniversary-btn">
+    ☘　10周年記念メッセージ
+</a>
 
 <p>現在の時間帯：{{ zone }}</p>
 
@@ -1564,7 +1501,172 @@ function resetSecret() {
 </body>
 </html>
 """
+#---------------------------------------------------------------------------------------------------
+Anniversary_HTML = """
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    background:#f8fbff;
+    font-family:"Zen Maru Gothic", sans-serif;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
+    padding:40px 12px 80px;
+    text-align:center;
+}
+
+h1{
+    font-size:2.4rem;
+    line-height:1.2;
+}
+
+.year{
+    font-size:1.2rem;
+    color:#666;
+    margin-bottom:30px;
+}
+
+hr{
+    border:none;
+    border-top:1px solid #ddd;
+    margin:32px 0;
+}
+
+h2{
+    font-size:2.3rem;
+    margin-bottom:28px;
+}
+
+.section p{
+    font-size:1.6rem;
+    line-height:2.2;
+}
+
+.thanks{
+    font-size:1.5rem;
+    line-height:2.2;
+}
+
+.signature{
+    font-size:1.2rem;
+    color:#666;
+    line-height:1.8;
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 24px;
+    border-radius:999px;
+    background:#dceef8;
+    color:#2f2f2f;
+    text-decoration:none;
+}
+
+@media(max-width:600px){
+
+    h1{
+        font-size:2.4rem;
+    }
+
+    h2{
+        font-size:1.8rem;
+    }
+
+    .section p{
+        font-size:1.15rem;
+    }
+
+    .thanks{
+        font-size:1.1rem;
+    }
+
+    .signature{
+        font-size:0.95rem;
+    }
+}
+
+</style>
+</head>
+
+
+<div class="container">
+
+<div class="container">
+
+<h1>☘️MIMI 10th Anniversary</h1>
+
+<p class="year">2016 - 2026</p>
+
+<hr>
+
+<div class="section">
+<h2>制作者からのメッセージ</h2>
+
+
+<p>
+MIMIさん、10周年本当におめでとうございます！
+そして、いつも素敵な楽曲をありがとうございます。
+</p>
+<p>
+私はMIMIさんの楽曲に惹かれ、カバー曲を制作したり、ファンサイトを作ったりしてきました。
+MIMIさんの楽曲には夜や季節をテーマにしたものや、感傷的で心に寄り添ってくれるものが多くあり、私は何度も救われ、支えられてきました。
+</p>
+<p>
+その想いから制作したのが「MIMI Time」です。
+MI民の皆さんや、このサイトを見つけてくださった方々にも、MIMIさんの楽曲の魅力を感じてもらえたらと思っています。
+</p>
+<p>
+10年間、本当にたくさんの素敵な楽曲をありがとうございました。
+
+そして、これから先もMIMIさんの音楽が多くの人に届くことを願っています。
+</p>
+<p>
+MIMIさん、これからも応援しています！
+</p>
+</div>
+
+<hr>
+
+<div class="section">
+<h2>Special Thanks</h2>
+
+<div class="thanks">
+機能テスト協力<br>
+友人
+</div>
+</div>
+
+<hr>
+
+<div class="signature">
+<p class="signature">
+MIMI Time 開発者<br>
+yu-sabu
+</p>
+</div>
+
+<a href="/main" class="back-btn">
+← MIMI Timeへ戻る
+</a>
+
+</div>
+</body>
+</html>
+"""
+#---------------------------------------------------------------------------------------------------
 ABOUT_HTML = """
 <!DOCTYPE html>
 <html lang="ja">
@@ -1634,11 +1736,9 @@ body {
 <p>
 掲載している動画は、YouTube公式の埋め込み機能を利用しています。  
 </p>
-
 <p>
 生成AIの利用に関する詳細は　MIMI Timeについて　をご覧ください。
 </p>
-
 <p>本サイトは非営利目的で運営しています。</p>
 <p>万が一問題等がございましたら、可能な限り対応いたします。</p>
 
@@ -1901,6 +2001,11 @@ def get_random_video(no_repeat=False):
 
     return selected
 
+
+#-------------------------------------------------------------
+@app.route("/Anniversary")
+def Anniversary():
+    return render_template_string(Anniversary_HTML)
 # about接続用--------------------------------------------------
 @app.route("/about")
 def about():
@@ -1987,7 +2092,7 @@ def server_error(e):
     <body>
         <h1>500 Internal Server Error</h1>
         <p>サーバーでエラーが発生しました</p>
-        <p>現在この曲は表示できません</p>
+        <p>現在このページは表示できません</p>
         <br>
         <a href="/main">もう一度試す</a>
     </body>
