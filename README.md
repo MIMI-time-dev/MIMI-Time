@@ -25,6 +25,10 @@ MIMI Time は、ボカロP「MIMI」(@mimi_3mi)さんの楽曲をきっかけに
 
 https://mimitimefan03.pythonanywhere.com
 
+## MIMI Time policy
+
+https://mimi-time-dev.github.io/mimi-time-policy/
+
 ## 作者
 
 ゆーさぶ
