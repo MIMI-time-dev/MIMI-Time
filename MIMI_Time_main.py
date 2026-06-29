@@ -1277,7 +1277,7 @@ onclick="return confirmYouTube()">
 {% endif %}
 
 <a class="share-btn"
-href="https://twitter.com/intent/tweet?text=今、この曲に出会いました。%0A%0A{{ title }}%0Ahttps://youtu.be/{{ video_id }}%0A%0AMIMI Time%0Ahttps://mimitimefan03.pythonanywhere.com%0A%0A%23MI民%E3%80%80%23MIMI_Time03"
+href="https://twitter.com/intent/tweet?text=今、この曲に出会いました。%0A%0A{{ title }}%0Ahttps://youtu.be/{{ video_id }}%0A%0AMIMI Time%0Ahttps://mimitimefan03.pythonanywhere.com%0A%0A%23%E3%80%80%23MIMI_Time03"
 target="_blank">
  ▶ この曲をXで共有する
 </a>
