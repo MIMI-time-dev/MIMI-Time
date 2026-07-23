@@ -1413,15 +1413,18 @@ font-weight:500;
 <hr>
 
 <button onclick="location.href='/Rules'" style="
-  margin-top:10px;
-  padding:8px 12px;
-  border-radius:8px;
-  background:#222;
-  color:#e6e8ff;
-  border:none;
-  cursor:pointer;
+    margin-top:10px;
+    width:100%;
+    min-height:48px;
+    padding:12px;
+    border-radius:10px;
+    color: rgba(248,250,252,0.95);
+    background: rgba(255,255,255,0.06);
+    border:none;
+    cursor:pointer;
+    font-size:16px;
 ">
-  利用規約
+利用規約
 </button>
         <br><br>
         <button id="closeSettings">閉じる</button>
