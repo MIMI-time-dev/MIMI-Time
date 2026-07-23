@@ -5,7 +5,7 @@ from flask import Flask, render_template_string, request, session
 import secrets
 from datetime import datetime, timezone, timedelta
 import random
-import requests
+#import requests
 
 JST = timezone(timedelta(hours=9))
 
@@ -84,15 +84,8 @@ BG_COLOR = {
 
 # 動画ID------------------------------------------------------
 ALL_VIDEOS = [
-    #1,アルバム収録曲
-    "spoQeZea7s8",
-    "56Na2tuPOXs",
-    "VRhZgfFOvZQ",
-    "w3S9o1kSpqE",
-    "5Zz_00sjwW0",
-    #2,アルバム収録曲（現時点での）
-    "RO6Z16icc8c",
     #最新曲---------------------------------------------------
+    "vw5ek-lffYY",
     "hwpeUW1yEOI",
     "OQvIBUvto5U",
     "8FxQ606Fqcc",
@@ -197,6 +190,14 @@ ALL_VIDEOS = [
     "qivTJhNbqUc",
     "SBlkzGiM5uE",
     # 全曲リスト
+    #1,アルバム収録曲
+    "spoQeZea7s8",
+    "56Na2tuPOXs",
+    "VRhZgfFOvZQ",
+    "w3S9o1kSpqE",
+    "5Zz_00sjwW0",
+    #2,アルバム収録曲（現時点での）
+    "RO6Z16icc8c",
     
 
 ]
@@ -208,16 +209,9 @@ ALL_VIDEOS = [
 
 # メイン用タイトル辞書------------------------------------------
 VIDEO_TITLES = {
-    #1,アルバム収録曲
-    "spoQeZea7s8":"淡さと微睡む",
-    "56Na2tuPOXs":"れじぇろ",
-    "VRhZgfFOvZQ":"アンダー",
-    "w3S9o1kSpqE":"水流音楽",
-    "5Zz_00sjwW0":"いいじゃない",
-    #2,アルバム収録曲（現時点での）
-    "RO6Z16icc8c":"大丈夫だよ。 (feat. 可不)",
     #最新曲---------------------------------------------------
-    "hwpeUW1yEOI":"『 ミュージック 』/ MIMI feat. 可不",
+    "vw5ek-lffYY":"『 アサガオ 』/ MIMI feat. saewool",
+    "hwpeUW1yEOI":"『ミュージック』/ MIMI feat. 可不",
     "OQvIBUvto5U":"『ソラの議事録』 / feat. 初音ミク",
     "8FxQ606Fqcc":"『 FLOAT 』 / MIMI feat. saewool (Music Video)",
     "1EevjGF2nuU":"『ぴょん』/ feat. 初音ミク＆重音テトSV",
@@ -321,18 +315,44 @@ VIDEO_TITLES = {
     "qivTJhNbqUc":"【初音ミク】　透明夏　【オリジナル曲】",
     "SBlkzGiM5uE":"【初音ミク】「ラピスラズリ」【オリジナル曲】",
     # 全曲リスト
+    #1,アルバム収録曲
+    "spoQeZea7s8":"淡さと微睡む",
+    "56Na2tuPOXs":"れじぇろ",
+    "VRhZgfFOvZQ":"アンダー",
+    "w3S9o1kSpqE":"水流音楽",
+    "5Zz_00sjwW0":"いいじゃない",
+    #2,アルバム収録曲（現時点での）
+    "RO6Z16icc8c":"大丈夫だよ。 (feat. 可不)",
     }
+
+ALBUM_VIDEO_IDS = {
+    "spoQeZea7s8",
+    "56Na2tuPOXs",
+    "VRhZgfFOvZQ",
+    "w3S9o1kSpqE",
+    "5Zz_00sjwW0",
+    "RO6Z16icc8c",
+}
+
+SONG_LIST = [
+    {
+        "id": video_id,
+        "title": VIDEO_TITLES.get(video_id, ""),
+        "category": "album" if video_id in ALBUM_VIDEO_IDS else "normal",
+    }
+    for video_id in VIDEO_TITLES
+]
 
 # dev用ALL_VIDEOS------------------------------------------
 DEV_ALL_VIDEOS = [
-#     #1,アルバム収録曲
-#     "spoQeZea7s8",
-#     "56Na2tuPOXs",
-#     "VRhZgfFOvZQ",
-#     "w3S9o1kSpqE",
-#     "5Zz_00sjwW0",
-#     #2,アルバム収録曲（現時点での）
-#     "RO6Z16icc8c",
+    #1,アルバム収録曲
+    "spoQeZea7s8",
+    "56Na2tuPOXs",
+    "VRhZgfFOvZQ",
+    "w3S9o1kSpqE",
+    "5Zz_00sjwW0",
+    #2,アルバム収録曲（現時点での）
+    "RO6Z16icc8c",
     #最新曲---------------------------------------------------
     "OQvIBUvto5U",
     "x0APPrPgexY",
@@ -363,137 +383,214 @@ LOADING_HTML = """
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MIMI Time</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500&display=swap" rel="stylesheet">
-
-<script>
-window.onload = function() {
-
-    setTimeout(() => {
-        document.getElementById("screen1").classList.remove("active");
-        document.getElementById("screen2").classList.add("active");
-    }, 1500);
-
-    setTimeout(() => {
-        document.getElementById("screen2").classList.remove("active");
-        document.getElementById("screen3").classList.add("active");
-    }, 3000);
-
-    setTimeout(() => {
-        document.getElementById("screen3").classList.remove("active");
-        document.getElementById("screen4").classList.add("active");
-    }, 4500);
-
-    setTimeout(() => {
-        window.location.href = "/main";
-    }, 6000);
-
-};
-</script>
-
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+:root {
+    color-scheme: dark;
+    --bg-start: #111827;
+    --bg-end: #314a76;
+    --panel: rgba(255, 255, 255, 0.07);
+    --border: rgba(255, 255, 255, 0.14);
+    --text: #f8fafc;
+    --muted: rgba(248, 250, 252, 0.8);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
     margin: 0;
-    height: 100vh;
-    overflow: hidden;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: radial-gradient(circle at center, #1a1a3a, #0B0B1A);
+    min-height: 100vh;
     font-family: 'Zen Maru Gothic', sans-serif;
+    color: var(--text);
+    background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
 }
 
-.screen {
-    position: absolute;
+.hero {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: clamp(16px, 3vw, 28px);
+}
+
+.panel {
+    width: min(100%, 780px);
+    padding: clamp(24px, 4vw, 36px);
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.16);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     text-align: center;
-    color: white;
-
-    opacity: 0;
-    transition: opacity 1s ease;
-
-    width: 90%;
 }
 
-.screen.active {
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    letter-spacing: 0.08em;
+    background: rgba(255,255,255,0.08);
+    color: var(--muted);
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-size: clamp(1.75rem, 4.2vw, 2.8rem);
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.lead {
+    margin: 0 auto 20px;
+    max-width: 620px;
+    font-size: clamp(0.95rem, 2vw, 1.08rem);
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.cta-btn {
+    appearance: none;
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-size: clamp(0.88rem, 1.8vw, 0.95rem);
+    font-weight: 500;
+    color: rgba(248,250,252,0.95);
+    background: rgba(255,255,255,0.06);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+    box-shadow: none;
+    opacity: 0.95;
+}
+
+.cta-btn:hover,
+.cta-btn:focus-visible {
+    transform: translateY(-1px);
+    background: rgba(255,255,255,0.12);
     opacity: 1;
 }
 
-.title {
-    font-size: 3.4rem;
-    line-height: 1.4;
+.section {
+    padding: clamp(8px, 2.5vw, 20px) clamp(16px, 4vw, 32px) 40px;
 }
 
-.subtitle {
-    font-size: 2.2rem;
-    opacity: 0.85;
+.content {
+    width: min(100%, 900px);
+    margin: 0 auto;
+    display: grid;
+    gap: 16px;
+    margin-top: -16px;
 }
 
-.message {
-    font-size: 3.4rem;
-    line-height: 1.8;
+.card {
+    padding: clamp(18px, 3vw, 24px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.05);
+    box-shadow: none;
 }
 
-.credit {
-    font-size: 2.0rem;
-    line-height: 2;
-    opacity: 0.9;
+.card h2 {
+    margin: 0 0 8px;
+    font-size: clamp(1.05rem, 2.2vw, 1.3rem);
 }
 
-.move-text {
-    margin-top: 30px;
-    font-size: 3rem;
-    opacity: 0.75;
+.card p {
+    margin: 0;
+    font-size: clamp(0.9rem, 1.7vw, 1rem);
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.grid .card {
+    padding: 16px;
+}
+
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(2, 6, 23, 0.82);
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.loading-text {
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    margin: 0;
+    color: #f8fafc;
 }
 
 .dots {
     display: inline-block;
-    animation: blink 1.5s infinite;
+    animation: blink 1.1s infinite;
 }
 
 @keyframes blink {
-    0% { opacity: 0.3; }
+    0%, 100% { opacity: 0.35; }
     50% { opacity: 1; }
-    100% { opacity: 0.3; }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        border-radius: 22px;
+    }
+
+    .hero {
+        padding: 14px;
+    }
 }
 </style>
-
 </head>
-
 <body>
-
-<div id="screen1" class="screen active">
-    <div class="title">
-        MIMI Time
-    </div>
-
-    <div class="subtitle">
-        10th Anniversary Edition
-    </div>
-</div>
-
-<div id="screen2" class="screen">
-    <div class="message">
-        Thank you for<br>
-        10 wonderful years.
+<div class="hero">
+    <div class="panel">
+        <div class="eyebrow">MIMI 10th Anniversary Edition</div>
+        <h1>MIMI Time</h1>
+        <p class="lead">
+                MIMI Timeをご利用の皆様へ。心より感謝申し上げます。<br>
+                To all MIMI and MIMI Time users.<br>
+                We would like to express our heartfelt gratitude.
+        </p>
+        <button class="cta-btn" id="proceedBtn" type="button">MIMI Timeに進む</button>
     </div>
 </div>
 
-<div id="screen3" class="screen">
-    <div class="credit">
-        From yu-sabu, the developer of MIMI Time.<br>
-        For MIMI and all MIMI Time users.
-    </div>
+<div class="loading-overlay" id="loadingOverlay" aria-live="polite">
+    <p class="loading-text">MIMI Timeに移動中<span class="dots">...</span></p>
 </div>
 
-<div id="screen4" class="screen">
-    <div class="move-text">
-        MIMI Timeへ移動中<span class="dots">...</span>
-    </div>
-</div>
+<script>
+const proceedBtn = document.getElementById('proceedBtn');
+const loadingOverlay = document.getElementById('loadingOverlay');
 
+proceedBtn.addEventListener('click', () => {
+    loadingOverlay.style.display = 'flex';
+
+    window.setTimeout(() => {
+        window.location.href = '/main';
+    }, 900);
+});
+</script>
 </body>
 </html>
 """
@@ -926,6 +1023,83 @@ body.late-night .main-btn {
   text-align: center;
 }
 
+.song-list-section {
+  margin-top: 12px;
+}
+
+.song-list {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.song-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.song-list-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.song-list-title {
+  flex: 1;
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.96);
+  word-break: break-word;
+  font-weight: 500;
+}
+
+.song-list-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.song-list-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.24);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.song-list-link:hover {
+  background: rgba(255,255,255,0.24);
+}
+
 #settingsModal details {
   text-align: left;
 }
@@ -1138,7 +1312,7 @@ font-weight:500;
 <body class="{{ zone }}">
 
 <a id="aboutBtn"
-   href="https://mimi-time-dev.github.io/mimi-time-policy/"
+   href="/about2"
    target="_blank">
    MIMI Timeについて
 </a>
@@ -1155,17 +1329,22 @@ font-weight:500;
         
 <hr>
 
-<button onclick="location.href='/dev'" style="
-  margin-top:10px;
-  padding:8px 12px;
-  border-radius:8px;
-  background:#222;
-  color:#e6e8ff;
-  border:none;
-  cursor:pointer;
-">
-  開発者モード
-</button>
+<details class="song-list-section">
+  <summary>収録曲一覧</summary>
+  <div class="song-list">
+    {% for song in song_list %}
+    <div class="song-list-item">
+      <span class="song-list-title-row">
+        <span class="song-list-title">{{ song.title }}</span>
+        {% if song.category == 'album' %}
+        <span class="song-list-badge">アルバム曲</span>
+        {% endif %}
+      </span>
+      <a class="song-list-link" href="https://www.youtube.com/watch?v={{ song.id }}" target="_blank" rel="noopener noreferrer">YouTube</a>
+    </div>
+    {% endfor %}
+  </div>
+</details>
 
 <hr>
 
@@ -1174,13 +1353,12 @@ font-weight:500;
 
   <!-- 直近の更新履歴 -->
   <div class="update-list">
+    26.07.23 MIMI Timeの利用規約の追加<br>
+    26.07.23 開発者モードの撤廃<br>
     26.06.07 期間限定のメッセージ追加<br>
     26.05.07 軽微な修正<br>
-    26.04.19 楽曲追加<br>
     26.04.11 楽曲情報の表示を追加<br>
     26.04.05 開発者モードの追加<br>
-    26.04.05 重複IDの削除<br>
-    26.03.25 楽曲追加<br>
     26.03.08 Twitter(X)共有機能を追加<br>
   </div>
 
@@ -1208,8 +1386,7 @@ font-weight:500;
 <details class="status-section">
   <summary>更新状況</summary>
   <div class="update-list">
-    1,修正コードの作成<br>
-    2,全曲（提供曲）の登録<br>
+    ベータ版MIMI Timeの開発、機能の適応
   </div>
 </details>
 
@@ -1219,11 +1396,12 @@ font-weight:500;
   <div class="license-text">
     © 2026 yu-sabu<br>
     本サイトのコードは、個人利用および非商用利用に限り使用を許可します。<br>
+    また、本サイトを参考にされる場合は必ず制作者に問い合わせをしてください。<br>
     商用利用は禁止します。<br>
     記載している動画はYouTube公式の埋め込み機能を使用しています。<br>
     各動画の著作権はそれぞれの権利者様に帰属します。<br>
     X（旧Twitter）はX Corp.の商標です。<br>
-    生成AIの利用に関する詳細は　MIMI Timeについて　をご覧ください。<br><br>
+    本サイトに関する詳細は設定内の「利用規約」または「MIMI Timeについて」をご覧ください。<br><br>
     ソースコードはGitHubで公開しています。<br>
     Source code is available on GitHub.<br>
 <a href="https://github.com/MIMI-time-dev/MIMI-Time" target="_blank" rel="noopener noreferrer">GitHubへ移動</a><br>
@@ -1231,6 +1409,20 @@ font-weight:500;
   </div>
   
 </details>
+
+<hr>
+
+<button onclick="location.href='/Rules'" style="
+  margin-top:10px;
+  padding:8px 12px;
+  border-radius:8px;
+  background:#222;
+  color:#e6e8ff;
+  border:none;
+  cursor:pointer;
+">
+  利用規約
+</button>
         <br><br>
         <button id="closeSettings">閉じる</button>
     </div>
@@ -1245,7 +1437,7 @@ font-weight:500;
 <p><a href="/Anniversary" class="anniversary-btn">
     ☘　10周年記念メッセージ
 </a>
-
+</p>
 <p>現在の時間帯：{{ zone }}</p>
 
 <p class="time">
@@ -1277,9 +1469,9 @@ onclick="return confirmYouTube()">
 {% endif %}
 
 <a class="share-btn"
-href="https://twitter.com/intent/tweet?text=今、この曲に出会いました。%0A%0A{{ title }}%0Ahttps://youtu.be/{{ video_id }}%0A%0AMIMI%20Time%0Ahttps://mimitimefan03.pythonanywhere.com%0A%0A%23MIMI_Time03"
-target="_blank" rel="noopener noreferrer">
-    ▶ この曲をXで共有する
+href="https://twitter.com/intent/tweet?text=今、この曲に出会いました。%0A%0A{{ title }}%0Ahttps://youtu.be/{{ video_id }}%0A%0AMIMI Time%0Ahttps://mimitimefan03.pythonanywhere.com%0A%0A%23MI民%E3%80%80%23MIMI_Time03"
+target="_blank">
+ ▶ この曲をXで共有する
 </a>
 
 <p style="opacity:0.55; font-size:13px; margin-top:10px;">
@@ -1310,9 +1502,8 @@ target="_blank" rel="noopener noreferrer">
 </div>
 
 <div class="footer-license">
-  © 2026 yu-sabu<br><br>
+  © MIMI Time/yu-sabu<br><br>
   <span>  
-    For personal, non-commercial use only.
     Music and artwork belong to their respective owners.
    </span>
   
@@ -1408,20 +1599,11 @@ function unlockSecret() {
 
     const validPasswords = [
         "mimi",
-        "マシュマリー",
-        "ましゅまりー",
         "mashumary",
         "masyumary",
-        "ただ声一つ",
-        "ただこえひとつ",
         "tadakoehitotu",
-        "ハナタバ",
-        "はなたば",
         "hanataba",
-        "ラピスラズリ",
-        "らぴすらずり",
         "rapisurazuri",
-        "よるつむぎ",
         "yorutumugi"
         
     ];
@@ -1739,7 +1921,8 @@ body {
 掲載している動画は、YouTube公式の埋め込み機能を利用しています。  
 </p>
 <p>
-生成AIの利用に関する詳細は　MIMI Timeについて　をご覧ください。
+生成AIの利用に関する詳細は　MIMI Timeについて　をご覧ください。<br>
+あわせて設定内の利用規約をご覧いただきますようお願い申し上げます。
 </p>
 <p>本サイトは非営利目的で運営しています。</p>
 <p>万が一問題等がございましたら、可能な限り対応いたします。</p>
@@ -1757,180 +1940,302 @@ body {
 </body>
 </html>
 """
-#開発モード------------------------------------------------------------------------------------------------------------------------
-DEV_HTML = """
+#規約------------------------------------------------------------------------------------------------------------------------
+RULES_HTML = """
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>[DEV] MIMI Time</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
+
+<title>MIMI Time - 利用規約</title>
+
 <style>
-
-
-
-body {
-    margin: 0;
-    background-color: {{ bg }};
-    font-family: 'Zen Maru Gothic', sans-serif;
-    transition: background-color 0.5s;
-    text-align: center;
-    color: {{ text_main }};
+body{
+    max-width:800px;
+    margin:auto;
+    padding:40px 20px;
+    font-family:"Noto Sans JP",sans-serif;
+    line-height:1.9;
+    color:#333;
+    background:#fff;
 }
 
-/* 開発バー（上部固定）*/
-#devBar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: rgba(20, 20, 20, 0.92);
-    color: #e6e8ff;
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    z-index: 9999;
-    font-size: 13px;
-    flex-wrap: wrap;
-    backdrop-filter: blur(6px);
+h1{
+    text-align:center;
+    margin-bottom:10px;
 }
 
-#devBar a {
-    color: #aac0ff;
-    text-decoration: none;
-    padding: 4px 10px;
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 999px;
-    font-size: 12px;
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:40px;
 }
 
-#devBar select {
-    background: #1e1e3f;
-    color: #e6e8ff;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 6px;
-    padding: 3px 8px;
-    font-size: 12px;
+h2{
+    margin-top:50px;
+    padding-bottom:8px;
+    border-bottom:1px solid #ddd;
 }
 
-#devBar span {
-    opacity: 0.5;
-    font-size: 12px;
+footer{
+    margin-top:60px;
+    text-align:center;
+    color:#777;
+    font-size:0.9em;
 }
-
-.container {
-    max-width: 560px;
-    margin: 0 auto;
-    padding: 110px 16px 96px;
-    box-sizing: border-box;
-}
-
-h1 { margin: 0 0 8px; color: {{ text_main }}; }
-p { margin: 6px 0; color: {{ text_sub }}; }
-.time { color: {{ text_faint }}; }
-
-.video-wrap { margin-top: 24px; }
-.video-wrap iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 12px;
-    border: none;
-}
-
-.song-title {
-    display: block;
-    max-width: 90%;
-    margin: 12px auto;
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: center;
-    color: #a9a9a9;
-    text-decoration: none;
-}
-
-/*再リロード*/
-
-.main-btn {
-    appearance: none;
-    -webkit-appearance: none;
-
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.05);
-
-    color: rgba(255,255,255,0.85);
-    padding: 5px 16px;
-    font-size: 13px;
-
-    cursor: pointer;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-
-    transition: all 0.3s ease;
-    
-    margin-top: 6px;
-    margin-bottom: 4px;
-}
-
-.main-btn:hover {
-    background: rgba(255,255,255,0.25);
-}
-
-
-
-.main-btn:hover {
-    background: rgba(255,255,255,0.25);
-    transform: translateY(-2px);
-}
-
-.footer-text { margin-top: 12px; color: {{ text_faint }}; }
 </style>
 </head>
 
-<body class="{{ zone }}">
+<body>
 
-<!-- 開発バー -->
-<div id="devBar">
-    <a href="/main">← メインに戻る</a>
-    <span>DEV MODE</span>
-    <label>時間帯：
-        <select onchange="location.href='/dev?zone='+this.value">
-            <option value="morning"   {% if zone=='morning'   %}selected{% endif %}>morning（朝）</option>
-            <option value="day"       {% if zone=='day'       %}selected{% endif %}>day（昼）</option>
-            <option value="evening"   {% if zone=='evening'   %}selected{% endif %}>evening（夕）</option>
-            <option value="night"     {% if zone=='night'     %}selected{% endif %}>night（夜）</option>
-            <option value="late night"{% if zone=='late night'%}selected{% endif %}>late night（深夜）</option>
-        </select>
-    </label>
-    <span>動画ID: {{ video_id }}</span>
-</div>
+<h1>MIMI Time</h1>
+<p class="subtitle">利用規約</p>
 
-<div class="container">
+<h2>適用</h2>
+<p>
+本利用規約（以下「本規約」）は、MIMI Time（以下「本サイト」）の利用条件を定めるものです。<br>
+本サイトをご利用いただいた時点で、本規約に同意いただいたものとみなします。
+</p>
 
-    <h1>{{ label }}</h1>
-    <p>時間帯：{{ zone }} / {{ time }}</p>
+<h2>著作権</h2>
+<p>
+掲載している動画はYouTube公式の埋め込み機能を利用しています。<br>
+楽曲、映像、ジャケット画像等の著作権は各権利者様に帰属します。<br><br>
 
-    {% if video_id %}
-    <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/{{ video_id }}" allowfullscreen></iframe>
-    </div>
-    {% endif %}
+本サイトに掲載している文章、デザイン、プログラム等（権利者に帰属するコンテンツを除く）の著作権は、MIMI Time運営者に帰属します。<br>
+GitHub上で公開しているソースコードについては、各リポジトリに記載されたライセンスに従ってご利用ください。
+</p>
 
-    <a class="song-title"
-       href="https://www.youtube.com/watch?v={{ video_id }}"
-       target="_blank">{{ title }}</a>
+<h2>禁止事項</h2>
+<p>
+利用者は、以下の行為を行ってはなりません。
+</p>
 
-    <button class="main-btn" onclick="location.reload()">別の曲を試す</button>
+<ul>
+<li>法令または公序良俗に反する行為</li>
+<li>本サイトの運営を妨害する行為</li>
+<li>本サイトまたは第三者へ損害を与える行為</li>
+<li>掲載内容を権利者の許可なく転載・再配布する行為</li>
+<li>その他、運営者が不適切と判断する行為</li>
+<li>本サイトに対する過度なアクセスや、不正なプログラム等によるサーバーへの負荷を与える行為</li>
+</ul>
 
-    {% if footer %}
-    <div class="footer-text">{{ footer }}</div>
-    {% endif %}
-</div>
+<h2>外部サービス</h2>
+<p>
+本サイトでは以下の外部サービスを利用しています。
+</p>
+
+<ul>
+<li>YouTube</li>
+<li>GitHub</li>
+<li>X（旧Twitter）</li>
+<li>PythonAnywhere</li>
+</ul>
+
+<p>
+各サービスの利用については、それぞれの利用規約・ポリシーに従ってください。
+</p>
+
+<h2>生成AIについて</h2>
+<p>
+本サイトでは、サイト制作の補助として生成AIを利用する場合があります。<br>
+掲載内容については運営者が確認し、最終判断を行っています。<br>
+また、生成AIによる画像は使用していません。
+</p>
+
+<h2>MIMI Timeを参考にした制作について</h2>
+MIMI Timeのデザインやアイデア等を参考に制作すること自体は禁止していません。<br>
+ただし、そのままの複製や誤認を招くような構成はお控えください。<br>
+参考にされる際、ご連絡は必須ではありませんが、お知らせいただけますと励みになります。<br>
+参考にした場合は、可能であれば参考元としてMIMI Timeへの言及や出典の記載をお願いいたします。
+
+<h2>免責事項</h2>
+<p>
+本サイトは正確な情報の提供に努めていますが、その正確性・完全性・最新性を保証するものではありません。<br>
+本サイトの利用によって生じたいかなる損害についても、運営者は責任を負いかねます。<br><br>
+
+また、本サイトは予告なく内容の変更・修正・公開停止を行う場合があります。
+</p>
+
+<h2>規約の変更</h2>
+<p>
+本規約は必要に応じて変更される場合があります。<br>
+変更後の内容は、本ページへ掲載した時点で効力を有するものとします。
+</p>
+
+<h2>お問い合わせ</h2>
+<p>
+本規約または本サイトに関するお問い合わせは、以下よりお願いいたします。
+</p>
+
+<p>
+X（旧Twitter）でのお問い合わせ<br>
+<a href="https://x.com/yu_sabu_P" target="_blank">
+制作者のX（旧Twitter）へ連絡する
+</a>
+</p>
+
+<p>
+メールでのお問い合わせ<br>
+<a href="mailto:kb2218.net@gmail.com">
+
+メールで問い合わせる
+</a>
+</p>
+
+<hr>
+
+<p>
+<a href="/main">
+← MIMI Timeへ戻る
+</a>
+</p>
+
+<footer>
+© MIMI Time/yu-sabu
+</footer>
 
 </body>
 </html>
 """
+POLICY_HTML = """
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>MIMI Time - 活動方針・運営について</title>
+
+<style>
+body{
+    max-width:800px;
+    margin:auto;
+    padding:40px 20px;
+    font-family: "Noto sans JP" , sans-serif;
+    line-height:1.9;
+    color:#333;
+    background:#fff;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:40px;
+}
+
+h2{
+    margin-top:50px;
+    padding-bottom:8px;
+    border-bottom:1px solid #ddd;
+}
+
+footer{
+    margin-top:60px;
+    text-align:center;
+    color:#777;
+    font-size:0.9em;
+}
+</style>
+</head>
+
+<body>
+
+<h1>MIMI Time</h1>
+<p class="subtitle">活動方針・運営について</p>
+
+<h2>利用規約について</h2>
+<p>
+本サイトの利用条件やガイドラインについては下記の「利用規約を見る」からご覧いただけます。<br>
+MIMI Timeを参考にされる場合のガイドラインについてもこちらに記載しております。
+</p>
+<p>
+<a href="/Rules">
+利用規約を見る
+</a><br>
+</p>
+
+<h2>このサイトについて</h2>
+<p>
+このページでは、MIMI Timeの活動方針や運営に関する考え方について公開しています。<br>
+本ページはMIMI Time運営者個人の考えをまとめたものであり、MIMIさん本人および関係者様の考えを示すものではありません。<br>
+MIMI Timeについて詳しく知りたい方は、ぜひご覧ください。<br>
+</p>
+
+<h2>MIMI Timeについて</h2>
+<p>
+MIMI Timeは、ボカロP「MIMI」さんの楽曲との新しい出会いを届けることを目的とした非公式ファンサイトです。<br>
+時間帯ごとに変化する背景とともに、ランダムに選曲される楽曲との出会いを楽しめるよう制作しています。<br>
+</p>
+<h2>活動方針</h2>
+<p>
+MIMI Timeは、MIMIさんの楽曲との新しい出会いを届けることを目的として運営しています。<br>
+楽曲や活動への想いを大切にし、ファンの皆様が安心して利用できるサイトを目指します。<br>
+また、単に楽曲を紹介するだけではなく、時間帯ごとに変化する背景や演出を通して、楽曲の持つ雰囲気や魅力を感じられる体験を提供したいと考えています。<br>
+サイトは非営利で運営しており、営利目的での利用は行いません。<br>
+権利者様からのご連絡やご指摘をいただいた場合は、内容を確認のうえ可能な限り対応いたします。<br><br>
+MIMI Timeが、まだ知らない楽曲との出会いのきっかけとなれば幸いです。<br>
+</p>
+
+<h2>運営について</h2>
+<p>
+MIMI Timeは個人によって運営されています。<br>
+更新頻度は学業や私生活の状況によって変動する場合がありますが、可能な範囲で継続して運営を行います。<br>
+また、将来的に運営の継続が困難になった場合は引き継ぎを含めた方法を検討します。<br>
+</p>
+
+<h2>サイトの歩み</h2>
+<p>
+2026年3月1日<br>
+MIMI Time公開<br><br>
+2026年6月9日<br>
+MIMIさん活動10周年記念アップデート公開<br>
+</p>
+
+<h2>協力・謝辞</h2>
+<p>
+MIMI Timeは、多くの方々のご協力やご意見をいただきながら制作・運営を行っています。<br>
+アイデアの提供など、制作に協力してくださった皆様にこの場をお借りして感謝申し上げます。<br><br>
+最後に、今日という時間が、あなたにとって大切な一曲と出会えますように。
+</p>
+
+<h2>お問い合わせ</h2>
+<p>
+ご意見、ご質問、問題のご報告などがございましたら、以下のメールアドレスまたはXのDMよりご連絡ください。
+</p>
+<p>
+X(旧Twitter)でのお問い合わせ<br>
+<a href="https://x.com/yu_sabu_P" target="_blank">
+制作者のTwitter(現X)で連絡する
+</a><br>
+メールでのお問い合わせ<br>
+
+<a href="mailto:kb2218.net@gmail.com"target="_blank">
+メールで連絡する
+</a><br>
+</p>
+
+<hr>
+
+<p>
+<a href="/main">
+← MIMI Timeへ戻る
+</a>
+</p>
+
+<footer>
+© MIMI Time/yu-sabu
+</footer>
+
+</body>
+</html>
+"""
 
 @app.route("/")
 def loading():
@@ -1963,6 +2268,7 @@ def index():
         text_sub=TEXT_COLOR_SUB[zone],
         text_faint=TEXT_COLOR_FAINT[zone],
         song_count=len(ALL_VIDEOS),
+        song_list=SONG_LIST,
     )
 
 def get_title(video_id):
@@ -2014,32 +2320,13 @@ def about():
     return render_template_string(ABOUT_HTML)
 # 調整用----------------------------------------------------------------------------
 
-@app.route("/dev")
-def dev():
-    zone_override = request.args.get("zone")
-    no_repeat = request.args.get("no_repeat") == "true"
+@app.route("/Rules")
+def Rules():
+    return render_template_string(RULES_HTML,)
 
-    hour = get_current_hour()
-    zone = zone_override if zone_override in TIME_LABEL else get_time_zone(hour)
-    now = datetime.now(JST)
-
-    video_id = random.choice(DEV_ALL_VIDEOS)
-    title = DEV_VIDEO_TITLES.get(video_id, "")
-
-    return render_template_string(
-        DEV_HTML,
-        label=TIME_LABEL[zone],
-        zone=zone,
-        time=now.strftime("%H:%M"),
-        bg=BG_COLOR[zone],
-        footer=FOOTER_TEXT[zone],
-        video_id=video_id,
-        title=title,
-        text_main=TEXT_COLOR_MAIN[zone],
-        text_sub=TEXT_COLOR_SUB[zone],
-        text_faint=TEXT_COLOR_FAINT[zone],
-        song_count=len(DEV_ALL_VIDEOS),
-    )
+@app.route("/about2")
+def about2():
+    return render_template_string(POLICY_HTML,)
 
 @app.errorhandler(404)
 def not_found(e):
