@@ -5,7 +5,7 @@ from flask import Flask, render_template_string, request, session
 import secrets
 from datetime import datetime, timezone, timedelta
 import random
-#import requests
+import requests
 
 JST = timezone(timedelta(hours=9))
 
@@ -85,6 +85,7 @@ BG_COLOR = {
 # 動画ID------------------------------------------------------
 ALL_VIDEOS = [
     #最新曲---------------------------------------------------
+    "cqssJAipBvw",
     "vw5ek-lffYY",
     "hwpeUW1yEOI",
     "OQvIBUvto5U",
@@ -198,18 +199,21 @@ ALL_VIDEOS = [
     "5Zz_00sjwW0",
     #2,アルバム収録曲（現時点での）
     "RO6Z16icc8c",
+    #3,隠れ家
+    "uJ7l43Sz7Q4",
     
 
 ]
 
 #ID確認用
-# for i in ALL_VIDEOS:
-#     print(f"https://www.youtube.com/watch?v={ i }")
+for i in ALL_VIDEOS:
+    print(f"https://www.youtube.com/watch?v={ i }")
 
 
 # メイン用タイトル辞書------------------------------------------
 VIDEO_TITLES = {
     #最新曲---------------------------------------------------
+    "cqssJAipBvw":"『QUIET』/ MIMI feat. 重音テト＆可不＆雨衣",
     "vw5ek-lffYY":"『 アサガオ 』/ MIMI feat. saewool",
     "hwpeUW1yEOI":"『ミュージック』/ MIMI feat. 可不",
     "OQvIBUvto5U":"『ソラの議事録』 / feat. 初音ミク",
@@ -323,6 +327,8 @@ VIDEO_TITLES = {
     "5Zz_00sjwW0":"いいじゃない",
     #2,アルバム収録曲（現時点での）
     "RO6Z16icc8c":"大丈夫だよ。 (feat. 可不)",
+    #3,隠れ家
+    "uJ7l43Sz7Q4":"Nexus ! / MIMI",
     }
 
 ALBUM_VIDEO_IDS = {
@@ -332,37 +338,50 @@ ALBUM_VIDEO_IDS = {
     "w3S9o1kSpqE",
     "5Zz_00sjwW0",
     "RO6Z16icc8c",
-}
+    }
+
+HIDEAWAY_VIDEO_IDS = {
+    "uJ7l43Sz7Q4",
+    }
 
 SONG_LIST = [
-    {
-        "id": video_id,
-        "title": VIDEO_TITLES.get(video_id, ""),
-        "category": "album" if video_id in ALBUM_VIDEO_IDS else "normal",
-    }
-    for video_id in VIDEO_TITLES
-]
+        {
+            "id": video_id,
+            "title": VIDEO_TITLES.get(video_id, ""),
+            "categories": [
+                *(
+                    ["album"]
+                    if video_id in ALBUM_VIDEO_IDS else []
+                ),
+                *(
+                    ["hideaway"]
+                    if video_id in HIDEAWAY_VIDEO_IDS else []
+                ),
+            ],
+        }
+        for video_id in VIDEO_TITLES
+    ]
 
 # dev用ALL_VIDEOS------------------------------------------
-DEV_ALL_VIDEOS = [
-    #1,アルバム収録曲
-    "spoQeZea7s8",
-    "56Na2tuPOXs",
-    "VRhZgfFOvZQ",
-    "w3S9o1kSpqE",
-    "5Zz_00sjwW0",
-    #2,アルバム収録曲（現時点での）
-    "RO6Z16icc8c",
-    #最新曲---------------------------------------------------
-    "OQvIBUvto5U",
-    "x0APPrPgexY",
-    "IxVFW1XIW7Q",
-
-]
+# DEV_ALL_VIDEOS = [
+#     #1,アルバム収録曲
+#     "spoQeZea7s8",
+#     "56Na2tuPOXs",
+#     "VRhZgfFOvZQ",
+#     "w3S9o1kSpqE",
+#     "5Zz_00sjwW0",
+#     #2,アルバム収録曲（現時点での）
+#     "RO6Z16icc8c",
+#     #最新曲---------------------------------------------------
+#     "OQvIBUvto5U",
+#     "x0APPrPgexY",
+#     "IxVFW1XIW7Q",
+# 
+# ]
 
 # dev用タイトル辞書------------------------------------------
-DEV_VIDEO_TITLES = {
-    #1,アルバム収録曲
+# DEV_VIDEO_TITLES = {
+#     #1,アルバム収録曲
 #     "spoQeZea7s8":"淡さと微睡む",
 #     "56Na2tuPOXs":"れじぇろ",
 #     "VRhZgfFOvZQ":"アンダー",
@@ -370,11 +389,11 @@ DEV_VIDEO_TITLES = {
 #     "5Zz_00sjwW0":"いいじゃない",
 #     #2,アルバム収録曲（現時点での）
 #     "RO6Z16icc8c":"大丈夫だよ。 (feat. 可不)",
-    #最新曲---------------------------------------------------
-    "OQvIBUvto5U":"『ソラの議事録』 / feat. 初音ミク",
-    "x0APPrPgexY":"『月夜』/ MIMI feat. 宵 (Music Video)",
-    "IxVFW1XIW7Q":"『花びら哀歌』/ feat. 重音テトSV",
-    }
+#     #最新曲---------------------------------------------------
+#     "OQvIBUvto5U":"『ソラの議事録』 / feat. 初音ミク",
+#     "x0APPrPgexY":"『月夜』/ MIMI feat. 宵 (Music Video)",
+#     "IxVFW1XIW7Q":"『花びら哀歌』/ feat. 重音テトSV",
+#     }
 
 #移動中表示-------------------------------------------
 
@@ -798,7 +817,7 @@ p {
 }
 
 .footer-text {
-    margin-top: 12apx;
+    margin-top: 12px;
     color: {{ text_faint }};
 }
 
@@ -985,7 +1004,7 @@ body.late-night .main-btn {
 
 /* 設定 */
 #settingsModal {
-    text-aglign: left;
+    text-align: left;
     background: rgba(30, 30, 60, 0.85);
     color: white;
     padding: 24px 28px;
@@ -1302,6 +1321,17 @@ color:#808080;
 font-weight:500;
 }
 
+/*アルバム等ID*/
+
+.song-list-badge.album{
+    background: rgba(255,255,255,0.22);
+}
+
+.song-list-badge.hideaway{
+    background: #7b5cff;
+    border: 1px solid #9c89ff;
+    color: #fff;
+}
 
 
 </style>
@@ -1332,17 +1362,29 @@ font-weight:500;
 <details class="song-list-section">
   <summary>収録曲一覧</summary>
   <div class="song-list">
-    {% for song in song_list %}
-    <div class="song-list-item">
-      <span class="song-list-title-row">
-        <span class="song-list-title">{{ song.title }}</span>
-        {% if song.category == 'album' %}
-        <span class="song-list-badge">アルバム曲</span>
-        {% endif %}
-      </span>
-      <a class="song-list-link" href="https://www.youtube.com/watch?v={{ song.id }}" target="_blank" rel="noopener noreferrer">YouTube</a>
-    </div>
-    {% endfor %}
+{% for song in song_list %}
+<div class="song-list-item">
+  <span class="song-list-title-row">
+    <span class="song-list-title">{{ song.title }}</span>
+
+    {% if 'album' in song.categories %}
+    <span class="song-list-badge album">アルバム曲</span>
+    {% endif %}
+
+    {% if 'hideaway' in song.categories %}
+    <span class="song-list-badge hideaway">隠れ家</span>
+    {% endif %}
+
+  </span>
+
+  <a class="song-list-link"
+     href="https://www.youtube.com/watch?v={{ song.id }}"
+     target="_blank"
+     rel="noopener noreferrer">
+     YouTube
+  </a>
+</div>
+{% endfor %}
   </div>
 </details>
 
@@ -1905,7 +1947,7 @@ a {
 }
 
 body {
-    padding-botom: 80px;
+    padding-bottom: 80px;
 }
 </style>
 </head>
