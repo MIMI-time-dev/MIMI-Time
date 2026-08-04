@@ -206,8 +206,8 @@ ALL_VIDEOS = [
 ]
 
 #ID確認用
-for i in ALL_VIDEOS:
-    print(f"https://www.youtube.com/watch?v={ i }")
+# for i in ALL_VIDEOS:
+#     print(f"https://www.youtube.com/watch?v={ i }")
 
 
 # メイン用タイトル辞書------------------------------------------
