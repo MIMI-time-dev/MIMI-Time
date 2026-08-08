@@ -28,9 +28,13 @@ MIMI Time は、ボカロP「MIMI」(@mimi_3mi)さんの楽曲をきっかけに
 - ベータ版
 - https://mimi-time-dev.github.io/MIMI_Time/
 
-## MIMI Time policy
+## MIMI Timeについて
 
-https://mimi-time-dev.github.io/mimi-time-policy/
+https://mimitimefan03.pythonanywhere.com/about2
+
+## 利用規約
+
+https://mimitimefan03.pythonanywhere.com/Rules
 
 ## 作者
 
@@ -39,7 +43,7 @@ https://mimi-time-dev.github.io/mimi-time-policy/
 
 ## 備考
 
-このプロジェクトは作者が初めて公に公開した個人作品です。
+このプロジェクトは作者が初めて製作した個人作品です。
 
 
 ## 謝辞
