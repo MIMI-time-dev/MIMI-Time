@@ -6,6 +6,7 @@ import secrets
 from datetime import datetime, timezone, timedelta
 import random
 import requests
+import json
 
 JST = timezone(timedelta(hours=9))
 
@@ -1157,7 +1158,15 @@ body.late-night .main-btn {
 /*更新*/
 .update-list {
   text-align: left;
-  }
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 8px;
+  line-height: 1.6;
+}
+
+.update-section {
+  margin-bottom: 10px;
+}
   
 /*ライセンス*/
 .license-section {
@@ -1395,35 +1404,14 @@ font-weight:500;
 <details class="update-section">
   <summary>更新履歴</summary>
 
-  <!-- 直近の更新履歴 -->
   <div class="update-list">
-    26.07.23 MIMI Timeの利用規約の追加<br>
-    26.07.23 開発者モードの撤廃<br>
-    26.06.07 期間限定のメッセージ追加<br>
-    26.05.07 軽微な修正<br>
-    26.04.11 楽曲情報の表示を追加<br>
-    26.04.05 開発者モードの追加<br>
-    26.03.08 Twitter(X)共有機能を追加<br>
+    {% for item in update_history.recent %}
+    {{ item.date }} {{ item.text }}<br>
+    {% endfor %}
+    {% for item in update_history.older %}
+    {{ item.date }} {{ item.text }}<br>
+    {% endfor %}
   </div>
-
-  <!-- 古い履歴 -->
-  <details>
-    <summary>過去の更新を見る</summary>
-    <div class="update-list">
-      26.03.08 MIMI Time内の収録曲数の追加<br>
-      26.03.08 楽曲情報の追加<br>
-      26.03.02 特定操作で表示されるページを追加<br>
-      26.03.02 各種動作の安定化<br>
-      26.03.01 更新状況タブを追加<br>
-      26.03.01 文字色の修正<br>
-      26.03.01 更新履歴タブの修正<br>
-      26.03.01 （設定）直近ランダム修正<br>
-      26.03.01 外部リンクセキュリティ対策<br>
-      26.03.01 ライセンス表記追加<br>
-      26.03.01 設定欄追加<br>
-      26.03.01 設定項目追加<br>
-    </div>
-  </details>
 
 </details>
 
@@ -2316,7 +2304,25 @@ def index():
         text_faint=TEXT_COLOR_FAINT[zone],
         song_count=len(ALL_VIDEOS),
         song_list=SONG_LIST,
+        update_history=load_update_history(),
     )
+
+
+def load_update_history():
+    path = os.path.join(os.path.dirname(__file__), "update.json")
+    if not os.path.exists(path):
+        return {"recent": [], "older": []}
+
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return {
+            "recent": data.get("recent", []),
+            "older": data.get("older", []),
+        }
+    except (json.JSONDecodeError, OSError):
+        return {"recent": [], "older": []}
+
 
 def get_title(video_id):
     url = f"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={video_id}&format=json"
