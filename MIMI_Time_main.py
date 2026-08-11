@@ -85,6 +85,7 @@ BG_COLOR = {
 # 動画ID------------------------------------------------------
 ALL_VIDEOS = [
     #最新曲---------------------------------------------------
+    "bndwBQROem0",
     "cqssJAipBvw",
     "vw5ek-lffYY",
     "hwpeUW1yEOI",
@@ -213,6 +214,7 @@ ALL_VIDEOS = [
 # メイン用タイトル辞書------------------------------------------
 VIDEO_TITLES = {
     #最新曲---------------------------------------------------
+    "bndwBQROem0":"『ひとひらの恋』/ MIMI feat.七夜月奏",
     "cqssJAipBvw":"『QUIET』/ MIMI feat. 重音テト＆可不＆雨衣",
     "vw5ek-lffYY":"『 アサガオ 』/ MIMI feat. saewool",
     "hwpeUW1yEOI":"『ミュージック』/ MIMI feat. 可不",
