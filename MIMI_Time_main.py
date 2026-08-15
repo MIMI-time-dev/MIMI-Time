@@ -1423,17 +1423,18 @@ font-weight:500;
 </details>
 
 <details class="license-section">
-  <summary>ライセンス</summary>
+  <summary>ライセンス概要</summary>
 
   <div class="license-text">
     © 2026 yu-sabu<br>
+    ※本文は簡易版のライセンス表記です。詳しくは利用規約をご覧ください。<br>
+    また、本サイトの方針は「MIMI Timeについて」をご覧ください。<br><br>
     本サイトのコードは、個人利用および非商用利用に限り使用を許可します。<br>
-    また、本サイトを参考にされる場合は利用規約をご確認ください。<br>
     商用利用は禁止します。<br>
+    楽曲・動画・ジャケット等の著作権はそれぞれの権利者様に帰属します。<br><br>
+    
     記載している動画はYouTube公式の埋め込み機能を使用しています。<br>
-    各動画の著作権はそれぞれの権利者様に帰属します。<br>
     X（旧Twitter）はX Corp.の商標です。<br>
-    本サイトに関する詳細は設定内の「利用規約」または「MIMI Timeについて」をご覧ください。<br><br>
     ソースコードはGitHubで公開しています。<br>
     Source code is available on GitHub.<br>
 <a href="https://github.com/MIMI-time-dev/MIMI-Time" target="_blank" rel="noopener noreferrer">GitHubへ移動</a><br>
