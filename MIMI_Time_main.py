@@ -6,12 +6,35 @@ import secrets
 from datetime import datetime, timezone, timedelta
 import random
 import requests
+import traceback
 import json
 
 JST = timezone(timedelta(hours=9))
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
+
+#エラーログ出力用-------------------------------------------------
+DEBUG_ERROR_LOG = False
+#確認時：True
+#公開時：False
+def error_log(message, error=None):
+    if not DEBUG_ERROR_LOG:
+        return
+    
+    print()
+    print("=" * 60)
+    print("[ERROR]")
+    print(message)
+    
+    if error is not None:
+        print("Error type:", type(error).__name__)
+        print("Error message:" , str(error))
+        print()
+        traceback.print_exc()
+        
+    print("=" * 60)
+    print()
 
 # 日本時間を取得 ---------------------------------
 def get_current_hour():
@@ -192,6 +215,7 @@ ALL_VIDEOS = [
     "lnfYoNLrMJE",
     "qivTJhNbqUc",
     "SBlkzGiM5uE",
+    "jMF8iIUvlEk",
     # 全曲リスト
     #1,アルバム収録曲
     "spoQeZea7s8",
@@ -202,7 +226,9 @@ ALL_VIDEOS = [
     #2,アルバム収録曲（現時点での）
     "RO6Z16icc8c",
     #3,隠れ家
+    "gJqB_1FabqM",
     "uJ7l43Sz7Q4",
+    "y7U_Fo_jyQI",
     
 
 ]
@@ -321,8 +347,9 @@ VIDEO_TITLES = {
     "lnfYoNLrMJE":"【初音ミク】parabola【オリジナル曲】",
     "qivTJhNbqUc":"【初音ミク】　透明夏　【オリジナル曲】",
     "SBlkzGiM5uE":"【初音ミク】「ラピスラズリ」【オリジナル曲】",
-    # 全曲リスト
-    #1,アルバム収録曲
+    "jMF8iIUvlEk":"マリアナの泡沫",
+#     # 全曲リスト
+#     #1,アルバム収録曲
     "spoQeZea7s8":"淡さと微睡む",
     "56Na2tuPOXs":"れじぇろ",
     "VRhZgfFOvZQ":"アンダー",
@@ -331,7 +358,9 @@ VIDEO_TITLES = {
     #2,アルバム収録曲（現時点での）
     "RO6Z16icc8c":"大丈夫だよ。 (feat. 可不)",
     #3,隠れ家
+    "gJqB_1FabqM":"『パメラの舞踏』/ MIMI",
     "uJ7l43Sz7Q4":"Nexus ! / MIMI",
+    "y7U_Fo_jyQI":"Athena's Paragraph / MIMI",
     }
 
 ALBUM_VIDEO_IDS = {
@@ -344,7 +373,9 @@ ALBUM_VIDEO_IDS = {
     }
 
 HIDEAWAY_VIDEO_IDS = {
+    "gJqB_1FabqM",
     "uJ7l43Sz7Q4",
+    "y7U_Fo_jyQI",
     }
 
 SONG_LIST = [
@@ -589,9 +620,11 @@ h1 {
         <div class="eyebrow">MIMI 10th Anniversary Edition</div>
         <h1>MIMI Time</h1>
         <p class="lead">
-                MIMI Timeをご利用の皆様へ。心より感謝申し上げます。<br>
-                To all MIMI and MIMI Time users.<br>
-                We would like to express our heartfelt gratitude.
+                MIMI Timeをご利用の皆さまへ。<br>
+                今日という時間が、あなたにとって<br>
+                大切な一曲と出会えますように。<br>
+                To all MIMI Time users.<br>
+                May today be the day you discover a song that’s special to you.
         </p>
         <button class="cta-btn" id="proceedBtn" type="button">MIMI Timeに進む</button>
     </div>
@@ -2318,11 +2351,14 @@ def load_update_history():
     try:
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
+
         return {
             "recent": data.get("recent", []),
             "older": data.get("older", []),
         }
-    except (json.JSONDecodeError, OSError):
+
+    except (json.JSONDecodeError, OSError) as e:
+        print(f"update.jsonの読み込みに失敗しました: {e}")
         return {"recent": [], "older": []}
 
 
@@ -2385,6 +2421,12 @@ def about2():
 
 @app.errorhandler(404)
 def not_found(e):
+    
+    error_log(
+        f"404 Not Found: {request.method} {request.path}",
+        e
+        )
+    
     return render_template_string("""
     <html>
     <head>
@@ -2415,6 +2457,12 @@ def not_found(e):
 
 @app.errorhandler(500)
 def server_error(e):
+    
+    error_log(
+        f"500 Internal Server Error: {request.method} {request.path}",
+        e
+    )
+    
     return render_template_string("""
     <html>
     <head>
@@ -2446,3 +2494,4 @@ def server_error(e):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
+
