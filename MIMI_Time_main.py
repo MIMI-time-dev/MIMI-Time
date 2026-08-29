@@ -438,6 +438,7 @@ LOADING_HTML = """
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MIMI Time</title>
+<meta name="description" content="MIMI Timeは、MIMIさんの楽曲にふと出会うための場所です。今日という時間が、あなたにとって大切な一曲と出会えますように。">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
