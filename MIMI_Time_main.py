@@ -226,6 +226,7 @@ ALL_VIDEOS = [
     #2,アルバム収録曲（現時点での）
     "RO6Z16icc8c",
     #3,隠れ家
+    "XOxAwcfZdQA",
     "gJqB_1FabqM",
     "uJ7l43Sz7Q4",
     "y7U_Fo_jyQI",
@@ -358,6 +359,7 @@ VIDEO_TITLES = {
     #2,アルバム収録曲（現時点での）
     "RO6Z16icc8c":"大丈夫だよ。 (feat. 可不)",
     #3,隠れ家
+    "XOxAwcfZdQA":"『19歳の未来駅』/MIMI feat.初音ミク",
     "gJqB_1FabqM":"『パメラの舞踏』/ MIMI",
     "uJ7l43Sz7Q4":"Nexus ! / MIMI",
     "y7U_Fo_jyQI":"Athena's Paragraph / MIMI",
@@ -373,6 +375,7 @@ ALBUM_VIDEO_IDS = {
     }
 
 HIDEAWAY_VIDEO_IDS = {
+    "XOxAwcfZdQA",
     "gJqB_1FabqM",
     "uJ7l43Sz7Q4",
     "y7U_Fo_jyQI",
