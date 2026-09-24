@@ -109,6 +109,7 @@ BG_COLOR = {
 # 動画ID------------------------------------------------------
 ALL_VIDEOS = [
     #最新曲---------------------------------------------------
+    "wYkCGgurK89",
     "SOBz91Kqz0g",
     "bndwBQROem0",
     "cqssJAipBvw",
@@ -243,6 +244,7 @@ ALL_VIDEOS = [
 # メイン用タイトル辞書------------------------------------------
 VIDEO_TITLES = {
     #最新曲---------------------------------------------------
+    "wYkCGgurK89":"MIMI - 透明夜 (feat. 可不)",
     "SOBz91Kqz0g":"『QED』 /MIMI feat.saewool ＆ 重音テトSV",
     "bndwBQROem0":"『ひとひらの恋』/ MIMI feat.七夜月奏",
     "cqssJAipBvw":"『QUIET』/ MIMI feat. 重音テト＆可不＆雨衣",
