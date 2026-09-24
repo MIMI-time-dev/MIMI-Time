@@ -25,21 +25,20 @@ MIMI Time は、ボカロP「MIMI」(@mimi_3mi)さんの楽曲をきっかけに
 
 - https://mimitimefan03.pythonanywhere.com
 
-## ベータ版（更新停止中）
+## ベータ版（更新終了）
 - https://mimi-time-dev.github.io/MIMI_Time/
 
 ## MIMI Timeについて
 
 https://mimitimefan03.pythonanywhere.com/about2
 
-## 利用規約
+## ご利用について
 
 https://mimitimefan03.pythonanywhere.com/Rules
 
 ## 作者
 
-ゆーさぶ
-（yu-sabu）
+ゆーさぶ/yu-sabu
 
 ## 備考
 
