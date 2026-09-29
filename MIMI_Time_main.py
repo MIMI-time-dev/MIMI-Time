@@ -1457,9 +1457,10 @@ font-weight:500;
 </details>
 
 <details class="status-section">
-  <summary>更新状況</summary>
+  <summary>更新について</summary>
   <div class="update-list">
-    楽曲追加のみ更新予定
+    楽曲追加のみ更新予定<br>
+    ※手動で楽曲の追加をしているため、反映が遅れる事があります。
   </div>
 </details>
 
