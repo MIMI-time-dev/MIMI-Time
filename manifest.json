@@ -1,0 +1,17 @@
+{
+  "name": "MIMI Time",
+  "short_name": "MIMI Time",
+  "description": "MIMIさんの活動を応援するために制作している非公式のファンサイトです。",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0B0B1A",
+  "theme_color": "#0B0B1A",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}

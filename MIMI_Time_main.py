@@ -1,7 +1,7 @@
 import os, sys
 sys.path.append(os.path.dirname(__file__))
 
-from flask import Flask, render_template_string, request, session
+from flask import Flask, render_template_string, request, session,send_from_directory
 import secrets
 from datetime import datetime, timezone, timedelta
 import random
@@ -13,6 +13,18 @@ JST = timezone(timedelta(hours=9))
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
+
+@app.route("/icon.png")
+def icon():
+    return send_from_directory(os.path.dirname(__file__), "icon.png")
+
+@app.route("/manifest.json")
+def manifest():
+    return send_from_directory(os.path.dirname(__file__), "manifest.json")
+
+@app.route("/service-worker.js")
+def service_worker():
+    return send_from_directory(os.path.dirname(__file__), "service-worker.js")
 
 #エラーログ出力用-------------------------------------------------
 DEBUG_ERROR_LOG = False
@@ -444,6 +456,12 @@ LOADING_HTML = """
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
+<link rel="icon" href="/icon.png?v=2">
+<link rel="apple-touch-icon" href="/icon.png?v=2">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0B0B1A">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MIMI Time</title>
@@ -656,6 +674,13 @@ proceedBtn.addEventListener('click', () => {
     }, 900);
 });
 </script>
+
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js");
+}
+</script>
+
 </body>
 </html>
 """
@@ -664,6 +689,12 @@ HTML = """
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
+<link rel="icon" href="/icon.png?v=2">
+<link rel="apple-touch-icon" href="/icon.png?v=2">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0B0B1A">
+
 <meta charset="UTF-8">
 <title>MIMI Time</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1760,6 +1791,12 @@ function resetSecret() {
 
 </div>
 
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js");
+}
+</script>
+
 </body>
 </div>
 </body>
@@ -1771,6 +1808,12 @@ Anniversary_HTML = """
 <html>
 <body>
 <head>
+
+<link rel="icon" href="/icon.png?v=2">
+<link rel="apple-touch-icon" href="/icon.png?v=2">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0B0B1A">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -1927,6 +1970,13 @@ yu-sabu
 </a>
 
 </div>
+
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js");
+}
+</script>
+
 </body>
 </html>
 """
@@ -1935,6 +1985,12 @@ ABOUT_HTML = """
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
+<link rel="icon" href="/icon.png?v=2">
+<link rel="apple-touch-icon" href="/icon.png?v=2">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0B0B1A">
+
 <meta charset="UTF-8">
 <title>ご利用時の注意と説明</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -2017,6 +2073,13 @@ body {
 <div class="back">
     <a href="/">← トップページに戻る</a>
 </div>
+
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js");
+}
+</script>
+
 </body>
 </html>
 """
@@ -2025,6 +2088,12 @@ RULES_HTML = """
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
+<link rel="icon" href="/icon.png?v=2">
+<link rel="apple-touch-icon" href="/icon.png?v=2">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0B0B1A">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -2240,6 +2309,12 @@ X（旧Twitter）でのお問い合わせ<br>
 © MIMI Time/yu-sabu
 </footer>
 
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js");
+}
+</script>
+
 </body>
 </html>
 """
@@ -2247,6 +2322,12 @@ POLICY_HTML = """
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
+<link rel="icon" href="/icon.png?v=2">
+<link rel="apple-touch-icon" href="/icon.png?v=2">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0B0B1A">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -2377,6 +2458,12 @@ X(旧Twitter)でのお問い合わせ<br>
 © MIMI Time/yu-sabu
 </footer>
 
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js");
+}
+</script>
+
 </body>
 </html>
 """
@@ -2504,6 +2591,10 @@ def not_found(e):
     return render_template_string("""
     <html>
     <head>
+    
+    <link rel="icon" href="/icon.png">
+    <link rel="apple-touch-icon" href="/icon.png">
+    
     <meta charset="UTF-8">
     <style>
     body {
@@ -2540,6 +2631,10 @@ def server_error(e):
     return render_template_string("""
     <html>
     <head>
+    
+    <link rel="icon" href="/icon.png">
+    <link rel="apple-touch-icon" href="/icon.png">
+    
     <meta charset="UTF-8">
     <style>
     body {
