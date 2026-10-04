@@ -2089,6 +2089,8 @@ RULES_HTML = """
 <html lang="ja">
 <head>
 
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
 <link rel="icon" href="/icon.png?v=2">
 <link rel="apple-touch-icon" href="/icon.png?v=2">
 <link rel="manifest" href="/manifest.json">
@@ -2104,7 +2106,7 @@ body{
     max-width:800px;
     margin:auto;
     padding:40px 20px;
-    font-family:"Noto Sans JP",sans-serif;
+    font-family:"Zen Maru Gothic",sans-serif;
     line-height:1.9;
     color:#333;
     background:#fff;
@@ -2323,6 +2325,8 @@ POLICY_HTML = """
 <html lang="ja">
 <head>
 
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
 <link rel="icon" href="/icon.png?v=2">
 <link rel="apple-touch-icon" href="/icon.png?v=2">
 <link rel="manifest" href="/manifest.json">
@@ -2338,7 +2342,7 @@ body{
     max-width:800px;
     margin:auto;
     padding:40px 20px;
-    font-family: "Noto sans JP" , sans-serif;
+    font-family:"Zen Maru Gothic",sans-serif;
     line-height:1.9;
     color:#333;
     background:#fff;
