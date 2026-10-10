@@ -241,6 +241,7 @@ ALL_VIDEOS = [
     #2,アルバム収録曲（現時点での）
     "RO6Z16icc8c",
     #3,隠れ家
+    "G2JZc3y__Mg",
     "HYCIcLqwxMs",
     "gJqB_1FabqM",
     "uJ7l43Sz7Q4",
@@ -377,6 +378,7 @@ VIDEO_TITLES = {
     #2,アルバム収録曲（現時点での）
     "RO6Z16icc8c":"大丈夫だよ。 (feat. 可不)",
     #3,隠れ家
+    "G2JZc3y__Mg":"眠れない君のとなりで",
     "HYCIcLqwxMs":"『19歳の未来駅』/MIMI feat.初音ミク",
     "gJqB_1FabqM":"『パメラの舞踏』/ MIMI",
     "uJ7l43Sz7Q4":"Nexus ! / MIMI",
@@ -393,6 +395,7 @@ ALBUM_VIDEO_IDS = {
     }
 
 HIDEAWAY_VIDEO_IDS = {
+    "G2JZc3y__Mg",
     "HYCIcLqwxMs",
     "gJqB_1FabqM",
     "uJ7l43Sz7Q4",
@@ -2089,8 +2092,6 @@ RULES_HTML = """
 <html lang="ja">
 <head>
 
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
-
 <link rel="icon" href="/icon.png?v=2">
 <link rel="apple-touch-icon" href="/icon.png?v=2">
 <link rel="manifest" href="/manifest.json">
@@ -2106,7 +2107,7 @@ body{
     max-width:800px;
     margin:auto;
     padding:40px 20px;
-    font-family:"Zen Maru Gothic",sans-serif;
+    font-family:"Noto Sans JP",sans-serif;
     line-height:1.9;
     color:#333;
     background:#fff;
@@ -2325,8 +2326,6 @@ POLICY_HTML = """
 <html lang="ja">
 <head>
 
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
-
 <link rel="icon" href="/icon.png?v=2">
 <link rel="apple-touch-icon" href="/icon.png?v=2">
 <link rel="manifest" href="/manifest.json">
@@ -2342,7 +2341,7 @@ body{
     max-width:800px;
     margin:auto;
     padding:40px 20px;
-    font-family:"Zen Maru Gothic",sans-serif;
+    font-family: "Noto sans JP" , sans-serif;
     line-height:1.9;
     color:#333;
     background:#fff;
