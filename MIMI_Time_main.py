@@ -2543,7 +2543,7 @@ def get_random_video(no_repeat=False):
     history = session.get("history", [])
 
     if no_repeat:
-        # 直近5曲を除外
+        # 直近10曲を除外
         candidates = [v for v in ALL_VIDEOS if v not in history]
 
         # すべて使うとリセット
@@ -2559,8 +2559,8 @@ def get_random_video(no_repeat=False):
     # 履歴に追加
     history.append(selected)
 
-    # 直近5曲のみ保持
-    history = history[-5:]
+    # 直近10曲のみ保持
+    history = history[-10:]
 
     session["history"] = history
 
