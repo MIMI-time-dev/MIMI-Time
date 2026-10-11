@@ -2105,59 +2105,61 @@ RULES_HTML = """
 <title>MIMI Time - ご利用について</title>
 
 <style>
-body{
-    max-width:800px;
-    margin:auto;
-    padding:40px 20px;
-    font-family:"Noto Sans JP",sans-serif;
-    line-height:1.9;
-    color:#333;
-    background:#fff;
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+
+body {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    line-height: 1.9;
+    color: #333;
+    background: #fff;
 }
 
-h1{
-    text-align:center;
-    margin-bottom:10px;
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.subtitle{
-    text-align:center;
-    color:#666;
-    margin-bottom:40px;
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
 }
 
-h2{
-    margin-top:50px;
-    padding-bottom:8px;
-    border-bottom:1px solid #ddd;
+h2 {
+    margin-top: 50px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
 }
 
-p{
-    margin:16px 0;
+p {
+    margin: 16px 0;
 }
 
-ul{
-    padding-left:1.5em;
+ul {
+    padding-left: 1.5em;
 }
 
-li{
-    margin-bottom:6px;
+li {
+    margin-bottom: 6px;
 }
 
-a{
-    color:#555;
+a {
+    color: #555;
 }
 
-footer{
-    margin-top:60px;
-    text-align:center;
-    color:#777;
-    font-size:0.9em;
+footer {
+    margin-top: 60px;
+    text-align: center;
+    color: #777;
+    font-size: 0.9em;
 }
 
-.back{
-    margin-top:40px;
-    text-align:center;
+.back {
+    margin-top: 40px;
+    text-align: center;
 }
 </style>
 </head>
@@ -2339,38 +2341,61 @@ POLICY_HTML = """
 <title>MIMI Time - 活動方針・運営について</title>
 
 <style>
-body{
-    max-width:800px;
-    margin:auto;
-    padding:40px 20px;
-    font-family: "Noto sans JP" , sans-serif;
-    line-height:1.9;
-    color:#333;
-    background:#fff;
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+
+body {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    line-height: 1.9;
+    color: #333;
+    background: #fff;
 }
 
-h1{
-    text-align:center;
-    margin-bottom:10px;
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.subtitle{
-    text-align:center;
-    color:#666;
-    margin-bottom:40px;
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
 }
 
-h2{
-    margin-top:50px;
-    padding-bottom:8px;
-    border-bottom:1px solid #ddd;
+h2 {
+    margin-top: 50px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
 }
 
-footer{
-    margin-top:60px;
-    text-align:center;
-    color:#777;
-    font-size:0.9em;
+p {
+    margin: 16px 0;
+}
+
+ul {
+    padding-left: 1.5em;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+a {
+    color: #555;
+}
+
+footer {
+    margin-top: 60px;
+    text-align: center;
+    color: #777;
+    font-size: 0.9em;
+}
+
+.back {
+    margin-top: 40px;
+    text-align: center;
 }
 </style>
 </head>
