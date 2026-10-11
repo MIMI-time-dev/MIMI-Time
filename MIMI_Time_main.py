@@ -2076,7 +2076,7 @@ body {
                                      作成者　ゆーさぶ
 </p>
 <div class="back">
-    <a href="/">← トップページに戻る</a>
+    <a href="/main">← トップページに戻る</a>
 </div>
 
 <script>
