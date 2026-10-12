@@ -10,7 +10,7 @@ MIMI Time は、ボカロP「MIMI」(@mimi_3mi)さんの楽曲をきっかけに
 
 ## 開発について
 
-このサイトは Python と Flask を使用して制作されています。
+このサイトは Python と Flaskを使用して制作しています。
 
 本サイトでは生成AIによる画像の使用や、他サイトのデータを用いた学習は行っていません。
 
@@ -23,10 +23,7 @@ MIMI Time は、ボカロP「MIMI」(@mimi_3mi)さんの楽曲をきっかけに
 
 ## 公開サイト
 
-- https://mimitimefan03.pythonanywhere.com
-
-## ベータ版（更新終了）
-- https://mimi-time-dev.github.io/MIMI_Time/
+https://mimitimefan03.pythonanywhere.com
 
 ## MIMI Timeについて
 
@@ -42,7 +39,7 @@ https://mimitimefan03.pythonanywhere.com/Rules
 
 ## 備考
 
-このプロジェクトは作者が初めて製作した個人作品です。
+このプロジェクトは作者が初めて制作した個人作品です。
 
 
 ## 謝辞
