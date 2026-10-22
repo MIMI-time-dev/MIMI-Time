@@ -15,7 +15,7 @@ JST = timezone(timedelta(hours=9))
 app = Flask(__name__)
 # app.secret_key = secrets.token_hex(16)
 
-MAINTENANCE_MODE = True
+MAINTENANCE_MODE = False
 
 MAINTENANCE_HTML = """
 <!DOCTYPE html>
@@ -1564,7 +1564,7 @@ font-weight:500;
   <summary>ライセンス概要</summary>
 
   <div class="license-text">
-    © 2026 yu-sabu<br>
+    © <a href="https://twitter.com/yu_sabu_P" target="_blank" rel="noopener noreferrer">2026 yu-sabu</a><br>
     ※本文は簡易版のライセンス表記です。詳しくは「ご利用について」をご覧ください。<br>
     また、本サイトの方針は「MIMI Timeについて」をご覧ください。<br><br>
     本サイトのコードは、個人利用および非商用利用に限り使用を許可します。<br>
@@ -1678,7 +1678,7 @@ target="_blank">
 <div class="footer-license">
   © MIMI Time/yu-sabu<br><br>
   <span>  
-    Music and artwork belong to their respective owners.
+    楽曲およびジャケット画像の著作権はそれぞれの権利者に帰属します。
    </span>
   
 </div>
