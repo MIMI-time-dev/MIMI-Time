@@ -13,7 +13,7 @@ JST = timezone(timedelta(hours=9))
 
 #secret_key-----------------------------------------------------
 app = Flask(__name__)
-app.secret_key = secrets.token_hex(16)
+# app.secret_key = secrets.token_hex(16)
 
 MAINTENANCE_MODE = True
 
@@ -48,28 +48,28 @@ def maintenance_check():
 # ここから既存のルート定義
 
 # ローカル環境用.env読み込み処理----------------------------------
-# env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
-# 
-# if os.path.isfile(env_path):
-#     with open(env_path, "r", encoding="utf-8") as f:
-#         for line in f:
-#             line = line.strip()
-# 
-#             if line and not line.startswith("#") and "=" in line:
-#                 key, value = line.split("=", 1)
-#                 key = key.strip()
-#                 value = value.strip()
-# 
-#                 if key and key not in os.environ:
-#                     os.environ[key] = value
-# 
-# # セッションキーを環境変数から取得
-# secret_key = os.environ.get("MIMI_TIME_SECRET_KEY")
-# 
-# if not secret_key:
-#     raise RuntimeError("MIMI_TIME_SECRET_KEY が設定されていません")
-# 
-# app.secret_key = secret_key
+env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+
+if os.path.isfile(env_path):
+    with open(env_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+
+            if line and not line.startswith("#") and "=" in line:
+                key, value = line.split("=", 1)
+                key = key.strip()
+                value = value.strip()
+
+                if key and key not in os.environ:
+                    os.environ[key] = value
+
+# セッションキーを環境変数から取得
+secret_key = os.environ.get("MIMI_TIME_SECRET_KEY")
+
+if not secret_key:
+    raise RuntimeError("MIMI_TIME_SECRET_KEY が設定されていません")
+
+app.secret_key = secret_key
 #---------------------------------------------------------------
 
 @app.route("/icon.png")
