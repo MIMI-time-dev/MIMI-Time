@@ -2,8 +2,8 @@ import os, sys
 sys.path.append(os.path.dirname(__file__))
 
 from flask import Flask, render_template_string, request, session,send_from_directory
-import secrets
 from datetime import datetime, timezone, timedelta
+import secrets
 import random
 import requests
 import traceback
@@ -11,8 +11,66 @@ import json
 
 JST = timezone(timedelta(hours=9))
 
+#secret_key-----------------------------------------------------
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
+
+MAINTENANCE_MODE = True
+
+MAINTENANCE_HTML = """
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIMI Time - メンテナンス中</title>
+</head>
+<body>
+    <h1>MIMI Time</h1>
+    <h3>HTTP 503</h3>
+    <h2>メンテナンス中</h2>
+    <p>現在、システムの保守および
+       セキュリティ対応を実施しています。</p>
+    <p>ご不便をおかけしますが、しばらくお待ちください。</p>
+    <footer>
+    © MIMI Time/yu-sabu
+    </footer>
+
+</body>
+</html>
+"""
+
+@app.before_request
+def maintenance_check():
+    if MAINTENANCE_MODE:
+        return MAINTENANCE_HTML, 503
+
+# ここから既存のルート定義
+
+# ローカル環境用.env読み込み処理----------------------------------
+# env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+# 
+# if os.path.isfile(env_path):
+#     with open(env_path, "r", encoding="utf-8") as f:
+#         for line in f:
+#             line = line.strip()
+# 
+#             if line and not line.startswith("#") and "=" in line:
+#                 key, value = line.split("=", 1)
+#                 key = key.strip()
+#                 value = value.strip()
+# 
+#                 if key and key not in os.environ:
+#                     os.environ[key] = value
+# 
+# # セッションキーを環境変数から取得
+# secret_key = os.environ.get("MIMI_TIME_SECRET_KEY")
+# 
+# if not secret_key:
+#     raise RuntimeError("MIMI_TIME_SECRET_KEY が設定されていません")
+# 
+# app.secret_key = secret_key
+#---------------------------------------------------------------
 
 @app.route("/icon.png")
 def icon():
@@ -27,7 +85,7 @@ def service_worker():
     return send_from_directory(os.path.dirname(__file__), "service-worker.js")
 
 #エラーログ出力用-------------------------------------------------
-DEBUG_ERROR_LOG = False
+DEBUG_ERROR_LOG = False 
 #確認時：True
 #公開時：False
 def error_log(message, error=None):
