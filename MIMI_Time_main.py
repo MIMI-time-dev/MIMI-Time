@@ -1678,7 +1678,7 @@ target="_blank">
 <div class="footer-license">
   © MIMI Time/yu-sabu<br><br>
   <span>  
-    楽曲およびジャケット画像の著作権はそれぞれの権利者に帰属します。
+    楽曲およびジャケット画像の著作権は<br>それぞれの権利者に帰属します。
    </span>
   
 </div>
